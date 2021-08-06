@@ -37,8 +37,8 @@ async def probq(ctx):
         problems[line.split(' => ')[0]] = line.split(' => ')[1]
 
     random_question, random_answer = random.choice(list(problems.items()))
-    preview(random_question, viewer="file", filename="output.png")
-    await ctx.send(file=discord.File(f"./output.png", filename="LaTeX_output.png"))
+    preview(random_question, viewer="file", filename="generated_latex/output.png")
+    await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
 
     def check(msg):
         return msg.author == ctx.author and msg.channel == ctx.channel
@@ -46,16 +46,16 @@ async def probq(ctx):
     msg = await bot.wait_for("message", check=check)
     if msg.content == random_answer:
         try:
-            preview("Nice job!", viewer="file", filename="output.png")
-            await ctx.send(file=discord.File(f"./output.png", filename="LaTeX_output.png"))
+            preview("Nice job!", viewer="file", filename="generated_latex/output.png")
+            await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
         except:
             await ctx.send("Nice job!")
     elif msg.content in COMMAND_LIST:
         pass
     else:
         try:
-            preview(f"Oof! The correct answer is {random_answer}", viewer="file", filename="output.png")
-            await ctx.send(file=discord.File(f"./output.png", filename="LaTeX_output.png"))
+            preview(f"Oof! The correct answer is {random_answer}", viewer="file", filename="generated_latex/output.png")
+            await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
         except:
             pass
 
@@ -94,8 +94,8 @@ async def miscprobq(ctx):
         problems[line.split(' => ')[0]] = line.split(' => ')[1]
 
     random_question, random_answer = random.choice(list(problems.items()))
-    preview(random_question, viewer="file", filename="output.png")
-    await ctx.send(file=discord.File(f"./output.png", filename="LaTeX_output.png"))
+    preview(random_question, viewer="file", filename="generated_latex/output.png")
+    await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
 
     def check(msg):
         return msg.author == ctx.author and msg.channel == ctx.channel
@@ -103,16 +103,16 @@ async def miscprobq(ctx):
     msg = await bot.wait_for("message", check=check)
     if msg.content == random_answer:
         try:
-            preview("Nice job!", viewer="file", filename="output.png")
-            await ctx.send(file=discord.File(f"./output.png", filename="LaTeX_output.png"))
+            preview("Nice job!", viewer="file", filename="generated_latex/output.png")
+            await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
         except:
             await ctx.send("Nice job!")
     elif msg.content in COMMAND_LIST:
         pass
     else:
         try:
-            preview(f"Oof! The correct answer is {random_answer}", viewer="file", filename="output.png")
-            await ctx.send(file=discord.File(f"./output.png", filename="LaTeX_output.png"))
+            preview(f"Oof! The correct answer is {random_answer}", viewer="file", filename="generated_latex/output.png")
+            await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
         except:
             pass
 
@@ -161,8 +161,8 @@ async def distq(ctx):
     f'{round((j_i * d_i + f_i * a_i) * (j_i ** 2 * h_i + f_i ** 2 * b_i), 4)}'}
 
     random_question, random_answer = random.choice(list(problems.items()))
-    preview(random_question, viewer="file", filename="output.png")
-    await ctx.send(file=discord.File(f"./output.png", filename="LaTeX_output.png"))
+    preview(random_question, viewer="file", filename="generated_latex/output.png")
+    await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
 
     def check(msg):
         return msg.author == ctx.author and msg.channel == ctx.channel
@@ -170,16 +170,16 @@ async def distq(ctx):
     msg = await bot.wait_for("message", check=check)
     if msg.content == random_answer:
         try:
-            preview("Nice job!", viewer="file", filename="output.png")
-            await ctx.send(file=discord.File(f"./output.png", filename="LaTeX_output.png"))
+            preview("Nice job!", viewer="file", filename="generated_latex/output.png")
+            await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
         except:
             await ctx.send("Nice job!")
     elif msg.content in COMMAND_LIST:
         pass
     else:
         try:
-            preview(f"Oof! The correct answer is {random_answer}", viewer="file", filename="output.png")
-            await ctx.send(file=discord.File(f"./output.png", filename="LaTeX_output.png"))
+            preview(f"Oof! The correct answer is {random_answer}", viewer="file", filename="generated_latex/output.png")
+            await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
         except:
             pass
 
@@ -190,8 +190,8 @@ async def bivarq(ctx):
         problems[line.split(' => ')[0]] = line.split(' => ')[1]
 
     random_question, random_answer = random.choice(list(problems.items()))
-    preview(random_question, viewer="file", filename="output.png")
-    await ctx.send(file=discord.File(f"./output.png", filename="LaTeX_output.png"))
+    preview(random_question, viewer="file", filename="generated_latex/output.png")
+    await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
 
     def check(msg):
         return msg.author == ctx.author and msg.channel == ctx.channel
@@ -199,16 +199,16 @@ async def bivarq(ctx):
     msg = await bot.wait_for("message", check=check)
     if msg.content == random_answer:
         try:
-            preview("Nice job!", viewer="file", filename="output.png")
-            await ctx.send(file=discord.File(f"./output.png", filename="LaTeX_output.png"))
+            preview("Nice job!", viewer="file", filename="generated_latex/output.png")
+            await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
         except:
             await ctx.send("Nice job!")
     elif msg.content in COMMAND_LIST:
         pass
     else:
         try:
-            preview(f"Oof! The correct answer is {random_answer}", viewer="file", filename="output.png")
-            await ctx.send(file=discord.File(f"./output.png", filename="LaTeX_output.png"))
+            preview(f"Oof! The correct answer is {random_answer}", viewer="file", filename="generated_latex/output.png")
+            await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
         except:
             pass
 
@@ -236,8 +236,8 @@ async def peq(ctx):
     f'{4 * (a_i + b_i + c_i + d_i + e_i) / 5}'}
 
     random_question, random_answer = random.choice(list(problems.items()))
-    preview(random_question, viewer="file", filename="output.png")
-    await ctx.send(file=discord.File("./output.png", filename="LaTeX_output.png"))
+    preview(random_question, viewer="file", filename="generated_latex/output.png")
+    await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
 
     def check(msg):
         return msg.author == ctx.author and msg.channel == ctx.channel
@@ -245,16 +245,16 @@ async def peq(ctx):
     msg = await bot.wait_for("message", check=check)
     if msg.content == random_answer:
         try:
-            preview("Nice job!", viewer="file", filename="output.png")
-            await ctx.send(file=discord.File(f"./output.png", filename="LaTeX_output.png"))
+            preview("Nice job!", viewer="file", filename="generated_latex/output.png")
+            await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
         except:
             await ctx.send("Nice job!")
     elif msg.content in COMMAND_LIST:
         pass
     else:
         try:
-            preview(f"Oof! The correct answer is {random_answer}", viewer="file", filename="output.png")
-            await ctx.send(file=discord.File(f"./output.png", filename="LaTeX_output.png"))
+            preview(f"Oof! The correct answer is {random_answer}", viewer="file", filename="generated_latex/output.png")
+            await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
         except:
             pass
 
