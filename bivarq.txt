@@ -1,0 +1,13 @@
+Consider $f(x,y)=\frac{x+y}{8}$, defined in the region $x>0, y>0, y<4-2x$. Compute $E[X]$ => 0.6667
+Consider $f(x,y)=\frac{x+y}{8}$, defined in the region $x>0, y>0, y<4-2x$. Compute $E[Y]$ => 1.6667
+Consider $f(x,y)=\frac{x+y}{8}$, defined in the region $x>0, y>0, y<4-2x$. Compute $Var[X]$ => 0.2222
+Consider $f(x,y)=\frac{x+y}{8}$, defined in the region $x>0, y>0, y<4-2x$. Compute $Var[Y]$ => 0.9556
+Consider $f(x,y)=\frac{x+y}{8}$, defined in the region $x>0, y>0, y<4-2x$. Compute $Cov[X,Y]$ => -0.3111
+Consider $f(x,y)=\frac{x+y}{8}$, defined in the region $x>0, y>0, y<4-2x$. Compute $E[XY]$ => 0.8
+Consider $f(x,y)=\frac{x+y}{8}$, defined in the region $x>0, y>0, y<4-2x$. Compute $P[X>1]$ => 0.25
+Consider $f(x,y)=\frac{1}{3}\cdot(\frac{2}{3})^x\cdot(\frac{1}{2})^y$, defined in $x=0,1,2,...$ and $y=1,2,...$. Compute $E[X]$ => 2
+Consider $f(x,y)=\frac{1}{3}\cdot(\frac{2}{3})^x\cdot(\frac{1}{2})^y$, defined in $x=0,1,2,...$ and $y=1,2,...$. Compute $E[Y]$ => 2
+Consider $f(x,y)=\frac{1}{3}\cdot(\frac{2}{3})^x\cdot(\frac{1}{2})^y$, defined in $x=0,1,2,...$ and $y=1,2,...$. Compute $Var[X]$ => 6
+Consider $f(x,y)=\frac{1}{3}\cdot(\frac{2}{3})^x\cdot(\frac{1}{2})^y$, defined in $x=0,1,2,...$ and $y=1,2,...$. Compute $Var[Y]$ => 2
+Consider $f(x,y)=\frac{1}{3}\cdot(\frac{2}{3})^x\cdot(\frac{1}{2})^y$, defined in $x=0,1,2,...$ and $y=1,2,...$. Compute $Cov[X,Y]$ => 0
+Consider $f(x,y)=\frac{1}{3}\cdot(\frac{2}{3})^x\cdot(\frac{1}{2})^y$, defined in $x=0,1,2,...$ and $y=1,2,...$. Compute $E[XY]$ => 4

@@ -1,0 +1,13 @@
+A fair six-sided die is rolled. What is the probability that the outcome is odd? => 0.5
+A fair six-sided die is rolled. What is the probability that the outcome is either even or prime? => 0.8333
+A fair six-sided die is rolled. What is the probability that the outcome is a perfect square? => 0.3333
+Two fair six-sided dice are rolled. What is the probability that the number on one die is bigger than that on the other? => 0.8333
+Two fair six-sided dice are rolled. What is the probability that the sum of the two dice is 7? => 0.1667
+Two fair six-sided dice are rolled. What is the probability that the product of the two dice is at least 20? => 0.2222
+Two fair six-sided dice are rolled. What is the probability that at least one 6 was rolled, given the product is at least 15? => 0.5385
+Two fair six-sided dice are rolled. What is the probability that a number I choose between 2 and 12 (with equal weight) is at least the sum of the two dice? => 0.5455
+Two fair six-sided dice are rolled. What is the probability that each die has a Fibonacci number, given the sum is a Fibonacci number? => 0.5833
+From a standard deck of 52 cards, a card is drawn. What is the probability it is the Ace of Spades? => 0.0192
+From a standard deck of 52 cards, 3 cards are drawn without replacement. What is the probability they are all spades? => 0.0129
+From a standard deck of 52 cards, 3 cards are drawn without replacement. What is the probability exactly 2 are of the same suit? => 0.5506
+From a standard deck of 52 cards, 5 cards are drawn without replacement. What is the probability 4 have the same number, given at least 3 have the same number? => 0.0105
