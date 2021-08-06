@@ -1,10 +1,16 @@
 import random
 import math
 import discord
+import os
 from sympy import *
 from discord.ext import commands
 
 init_printing(use_latex='mathjax')
+
+try:
+    os.mkdir("generated_latex")
+except FileExistsError:
+    print("generated_latex directory already exists")
 
 prob_questions = open("hardcoded/prob_questions.txt", 'r')
 prob_questions_lines = prob_questions.read().splitlines()
