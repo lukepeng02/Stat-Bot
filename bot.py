@@ -6,15 +6,15 @@ from discord.ext import commands
 
 init_printing(use_latex='mathjax')
 
-prob_questions = open("prob_questions.txt", 'r')
+prob_questions = open("hardcoded/prob_questions.txt", 'r')
 prob_questions_lines = prob_questions.read().splitlines()
 prob_questions.close()
 
-misc_prob_questions = open("misc_prob_questions.txt", 'r')
+misc_prob_questions = open("hardcoded/misc_prob_questions.txt", 'r')
 misc_prob_questions_lines = misc_prob_questions.read().splitlines()
 misc_prob_questions.close()
 
-bivar_questions = open("bivarq.txt", 'r')
+bivar_questions = open("hardcoded/bivarq.txt", 'r')
 bivar_questions_lines = bivar_questions.read().splitlines()
 bivar_questions.close()
 
