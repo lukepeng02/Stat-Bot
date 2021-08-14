@@ -1,6 +1,3 @@
-import random
-import math
-import discord
 import os
 from sympy import *
 from discord.ext import commands
@@ -26,17 +23,16 @@ bot = commands.Bot(command_prefix='!')
 
 @bot.command(name="ansformat", help="Learn how to format answers")
 async def ansformat(ctx):
-    await ctx.send("Round numerical answers to 4 decimal places, or less if fewer are needed")
-    await ctx.send("Include a zero before the decimal point if necessary")
-    await ctx.send("If an answer does not have any digits but 0 when rounded to 4 places, " +
-    "enter '0.0'")
-    await ctx.send("Omit all 0s after the last non-zero digit, even if it is rounded")
+    await ctx.send("""Round numerical answers to 4 decimal places, or less if fewer are needed.
+    Include a zero before the decimal point if necessary.
+    If an answer does not have any digits but 0 when rounded to 4 places, enter '0.0'.
+    Omit all 0s after the last non-zero digit after rounding.
+    e.g. If your answer is 0.47301, enter '0.473'.""")
 
-bot.load_extension("randomized_questions.prob_questions")
-bot.load_extension("randomized_questions.misc_prob_questions")
-bot.load_extension("randomized_questions.dist_questions")
-bot.load_extension("randomized_questions.bivar_dist_questions")
-bot.load_extension("randomized_questions.point_est_questions")
+for file in os.listdir('randomized_questions'):
+    if file.endswith(".py"):
+        file_name = file[:-3]
+        bot.load_extension(f"randomized_questions.{file_name}")
 
 @bot.event
 async def on_command_error(ctx, error):

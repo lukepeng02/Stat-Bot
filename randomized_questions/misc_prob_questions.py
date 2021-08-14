@@ -1,9 +1,41 @@
 import discord
 import random
-import math
 from sympy import *
 from discord.ext import commands
-from constants import COMMAND_LIST, MISC_PROB_QUESTIONS_LINES
+from constants import COMMAND_LIST, MISC_PROB_QUESTIONS_LINES, extended_format
+
+
+random_problems = {'I have &(f + s + t&) cards: &(f&) are red ' +
+            'on both sides, &(s&) are blue on both sides, and &(t&) are blue on one ' +
+            'side and red on the other. I choose a random card and see it is red on this side. ' +
+            'What is the probability the other side is blue?=>&(t / (2 * f + t)&)':
+            {'f': 'randint(2,6)', 's': 'randint(2,6)', 't': 'randint(2, 6)'},
+
+            'The probability David takes the bus on any day is &(f&), and the probability it ' +
+            'rains on any day is &(s&). If the probability that it is not raining and David is ' +
+            'not taking the bus is &(1 - f - s + t&), find the probability it ' +
+            'is raining, given David is not taking the bus.=>&((s - t) / (1 - f)&)':
+            {'f': 'randuni(0.5, 0.7, 2)', 's': 'randuni(0.5, 0.7, 2)',
+            't': 'randuni(0.41, 0.5, 2)'},
+
+            'Let the pmf of $f(x)=c\cdot\\frac{{&(f&)^x}}{{x!}}, x = 3,4,5,...$ What is $c$?' +
+            '=>&(2 / (2 * exp(f) - f ** 2 - 2 * f - 2)&)': {'f': 'randint(2,6)'},
+
+            'I roll a fair six-sided die &(d&) times. What is $P$[exactly &(f&) perfect squares]?' +
+            '=>&(binomial(d, f) * ((1 / 3) ** f) * ((2 / 3) ** (d - f))&)':
+            {'d': 'randint(10,20)', 'f': 'randint(2,6)'},
+
+            'I roll a fair &(e&)-sided die &(f&) times. What is the expected value for the product?' +
+            '=>&(((e + 1) / 2) ** f&)': {'e': 'randint(6,10)', 'f': 'randint(2,6)'},
+            
+            'An ant starts at $(0,0)$ and can only go up by 1 and to the right by 1 each move. ' +
+            'Find the probability it has visited $(&(a&),&(b&))$, given that it is at ' +
+            '$(&(n&),&(k&))$=>&(binomial(a+b,a) * binomial(n+k-a-b,n-a) / binomial(n+k,n)&)':
+            {'n': 'randint(5,10)', 'k': 'randint(5,10)', 'a': 'randint(1,4)', 'b': 'randint(1,4)'}}
+
+hardcoded_problems = {}
+for line in MISC_PROB_QUESTIONS_LINES:
+    hardcoded_problems[line.split(' => ')[0]] = line.split(' => ')[1]
 
 class Misc_Probability(commands.Cog):
     def __init__(self, bot):
@@ -11,47 +43,26 @@ class Misc_Probability(commands.Cog):
 
     @commands.command(name="miscprobq", help="Answer a miscellaneous probability question")
     async def miscprobq(self, ctx):
-        f_i = random.randint(2, 6)
-        s_i = random.randint(2, 6)
-        t_i = random.randint(2, 6)
-        d_i = random.randint(10, 20)
-        e_i = random.randint(6, 10)
+        choice = random.randrange(2 * len(random_problems) + len(hardcoded_problems))
+        formatted_question, formatted_answer = None, None
+        if choice in range(2 * len(random_problems)):
+            random_question, variables = random.choice(list(random_problems.items()))
+            formatted_question, formatted_answer = extended_format(random_question, variables)
+        else:
+            formatted_question, formatted_answer = random.choice(list(hardcoded_problems.items()))
 
-        f_f = round(random.uniform(0.5, 0.7), 2)
-        s_f = round(random.uniform(0.5, 0.7), 2)
-        t_f = round(random.uniform(0.4, min(f_f, s_f)), 2)
-
-        problems = {f'I have {f_i + s_i + t_i} cards: {f_i} are red ' +
-            f'on both sides, {s_i} are blue on both sides, and {t_i} are blue on one ' +
-            'side and red on the other. I choose a random card and see it is red on this side. ' +
-            'What is the probability the other side is blue?': f'{round(t_i / (2 * f_i + t_i), 4)}',
-
-            f'The probability David takes the bus on any day is {f_f}, and the probability it ' +
-            f'rains on any day is {s_f}. If the probability that it is not raining and David is ' +
-            f'not taking the bus is {round(1 - f_f - s_f + t_f, 2)}, find the probability it ' +
-            'is raining, given David is not taking the bus.': f'{round((s_f - t_f) / (1 - f_f), 4)}',
-
-            f'Let the pmf of $f(x)=c\cdot\\frac{{{f_i}^x}}{{x!}}, x = 3,4,5,...$ What is $c$?':
-            f'{round(2 / (2 * math.exp(f_i) - f_i ** 2 - 2 * f_i - 2), 4)}',
-
-            f'I roll a fair six-sided die {d_i} times. What is $P$[exactly {f_i} perfect squares]?':
-            f'{round(math.comb(d_i, f_i) * ((1 / 3) ** f_i) * ((2 / 3) ** (d_i - f_i)), 4)}',
-
-            f'I roll a fair {e_i}-sided die {f_i} times. What is the expected value for the product?':
-            f'{round(((e_i + 1) / 2) ** f_i, 4)}'}
-        
-        for line in MISC_PROB_QUESTIONS_LINES:
-            problems[line.split(' => ')[0]] = line.split(' => ')[1]
-
-        random_question, random_answer = random.choice(list(problems.items()))
-        preview(random_question, viewer="file", filename="generated_latex/output.png")
-        await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
+        try:
+            preview(formatted_question, viewer="file", filename="generated_latex/output.png")
+            await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
+        except:
+            await ctx.send("Please slow down!")
+            return
 
         def check(msg):
             return msg.author == ctx.author and msg.channel == ctx.channel
 
         msg = await self.bot.wait_for("message", check=check)
-        if msg.content == random_answer:
+        if msg.content == formatted_answer:
             try:
                 preview("Nice job!", viewer="file", filename="generated_latex/output.png")
                 await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
@@ -61,7 +72,7 @@ class Misc_Probability(commands.Cog):
             pass
         else:
             try:
-                preview(f"Oof! The correct answer is {random_answer}", viewer="file", filename="generated_latex/output.png")
+                preview(f"Oof! The correct answer is {formatted_answer}", viewer="file", filename="generated_latex/output.png")
                 await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
             except:
                 pass

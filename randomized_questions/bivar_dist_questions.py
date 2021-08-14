@@ -4,19 +4,24 @@ from sympy import *
 from discord.ext import commands
 from constants import COMMAND_LIST, BIVAR_QUESTIONS_LINES
 
+problems = {}
+for line in BIVAR_QUESTIONS_LINES:
+    problems[line.split(' => ')[0]] = line.split(' => ')[1]
+
 class Bivariate_Distributions(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
     @commands.command(name="bivarq", help="Answer a bivariate distribution question")
     async def bivarq(self, ctx):
-        problems = {}
-        for line in BIVAR_QUESTIONS_LINES:
-            problems[line.split(' => ')[0]] = line.split(' => ')[1]
-
         random_question, random_answer = random.choice(list(problems.items()))
-        preview(random_question, viewer="file", filename="generated_latex/output.png")
-        await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
+
+        try:
+            preview(random_question, viewer="file", filename="generated_latex/output.png")
+            await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
+        except:
+            await ctx.send("Please slow down!")
+            return
 
         def check(msg):
             return msg.author == ctx.author and msg.channel == ctx.channel

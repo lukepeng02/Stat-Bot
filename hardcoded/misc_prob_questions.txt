@@ -1,0 +1,1 @@
+If I choose two distinct numbers between 1 and 10, inclusive, what is the probability that they are relatively prime? => 0.6889
