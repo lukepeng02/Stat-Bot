@@ -1,1 +1,20 @@
 If I choose two distinct numbers between 1 and 10, inclusive, what is the probability that they are relatively prime? => 0.6889
+Steve has a Fortune III diamond pickaxe, which gives him a $40\%$ chance of getting 1 diamond and a $20\%$ chance of getting 2, 3, or 4 diamonds when mining a diamond ore. If he mines 10 diamond ores, what is the expected number of diamonds he gets? => 22
+Steve has a Fortune III diamond pickaxe, which gives him a $40\%$ chance of getting 1 diamond and a $20\%$ chance of getting 2, 3, or 4 diamonds when mining a diamond ore. If he mines 2 diamond ores, what is the probability he has 5 diamonds? => 0.24
+Katniss lands 3 arrows on a target made of concentric circles with radii 1, 2, and 3. If the regions bounded by the circles are worth 20, 15, and 10 points, from innermost to outermost, what is the probability she has 45 points? => 0.1605
+Katniss lands 3 arrows on a target made of concentric circles with radii 1, 2, and 3. If the regions bounded by the circles are worth 20, 15, and 10 points, from innermost to outermost, what is the expected number of points she has? => 38.3333
+Alice picks a real number between 3 and 8, and Bob picks one between 4 and 6 (both with uniform density). Find the probability Alice's number is greater than Bob's. => 0.6
+Albert promises to cancel an assignment if a uniform random number generator produces 3 numbers between 0 and 1, whose sum is less than 1. What is the probability the assignment is cancelled? => 0.1667
+Let the pmf of $X$ be $f(x)=c\cdot \frac{F_x}{2^x},x=1,2,3,...$, where $F_x$ is the $x$th Fibonacci number. Find the value of $c$. => 0.5
+I have 2 pennies, 3 nickels, 2 dimes, and 3 quarters. If I choose 3 coins, find the probability I have at least 30 cents. => 0.4333
+Alice plays a carnival game where she rolls a 6-sided die until a 1 shows up. If she rolls $x$, where $x \neq 1$, she earns $x$ more dollars. Find her expected winnings, in dollars. => 20
+Bernie conducts an experiment with a fair coin. He has flipped it 13 out of 100 times and got 9 heads so far. What is the expected number of tails after the 100th flip? => 47.5
+Capone has 5 coins. Each coin has a $30\%$ chance of being counterfeit. Find the probability exactly 3 are counterfeit, given that at least 2 are. => 0.2804
+Consider the region $D$ bounded by the lines $y=x,y=0,x=1,x=2$. Find the value of $c$ such that $\iint_D c\cdot\frac{xy^2}{2}\text{ d}y\text{ d}x=1$. => 0.9677
+Emily plays a game where she rolls a 6-sided die until 3 distinct numbers come up. Find the probability it takes 5 rolls. => 0.108
+Alice and Bob agree to arrive at Dan's Diner between 5:00 and 6:00, but they are poor at coordinating. Alice will wait 10 minutes for Bob before leaving, and Bob will wait 15 minutes for Alice before leaving. If they arrive at random times (with uniform distribution), what is the probability they meet? => 0.3715
+Shack and Bron take turns shooting free throws. Shack makes them 0.5 of the time, while Bron makes them 0.75 of the time. The winner is the first person to make two. If Shack shoots first, what is the probability he wins? => 0.3965
+Alice, Bob, Carl, and Dan each pick a random integer between 0 and 5. What is the probability the sum is 8? => 0.0965
+SpongeBob and Patrick play Eels and Escalators, and the winner of the match is the first to win 3 games. SpongeBob has a 0.6 chance of winning a game, compared to Patrick's 0.4. Given that Patrick won the first game, what is the probability Patrick wins the match? => 0.5248
+Let $P[A]=0.52, P[B]=0.41, P[C]=0.47, P[A \cap B]=0.19, P[A \cap C]=0.17, P[B \cap C]=0.23, P[A \cap B \cap C]=0.06$. Find $P[(A \cup B) - C]$. => 0.4
+Let $P[A]=0.52, P[B]=0.41, P[C]=0.47, P[A \cap B]=0.19, P[A \cap C]=0.17, P[B \cap C]=0.23, P[A \cap B \cap C]=0.06$. Find $P[(B \cup C)']$. => 0.35

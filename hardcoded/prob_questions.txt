@@ -11,3 +11,40 @@ From a standard deck of 52 cards, a card is drawn. What is the probability it is
 From a standard deck of 52 cards, 3 cards are drawn without replacement. What is the probability they are all spades? => 0.0129
 From a standard deck of 52 cards, 3 cards are drawn without replacement. What is the probability exactly 2 are of the same suit? => 0.5506
 From a standard deck of 52 cards, 5 cards are drawn without replacement. What is the probability 4 have the same number, given at least 3 have the same number? => 0.0105
+In an infinite apple orchard, $10\%$ of all apples are green. If I pick 3, what is the probability at most one is green? => 0.972
+In an infinite apple orchard, $10\%$ of all apples are green. What is the probability that I first pick a green one, and then 3 non-green ones? => 0.0729
+In an infinite apple orchard, $10\%$ of all apples are green. What is the probability that I pick 2 green ones and 5 non-green ones? => 0.124
+In an infinite apple orchard, $10\%$ of all apples are green. If I pick 4, what is the probability none are green, given that at most one is green? => 0.75
+A fair eight-sided die is rolled. What is the probability I get my second 7 on my fifth roll? => 0.0419
+Let $P[A]=0.4,P[B]=0.3,P[A\cap B]=0.1$. Find $P[A \cup B]$. => 0.6
+Let $P[A]=0.4,P[B]=0.3,P[A\cap B]=0.1$. Find $P[A \vert B]$. => 0.3333
+Let $P[A]=0.4,P[B]=0.3,P[A\cap B]=0.1$. Find $P[B \vert A]$. => 0.25
+Let $P[A]=0.4,P[B]=0.3,P[A\cap B]=0.1$. Find $P[(A \cup B)']$. => 0.4
+Let $P[A]=0.4,P[B]=0.3,P[A\cap B]=0.1$. Find $P[A' \vert B']$. => 0.5714
+Let $P[A]=0.4,P[B]=0.3,P[A\cap B]=0.1$. Find $P[B' \vert A']$. => 0.6667
+Let $P[A]=0.4,P[B]=0.3,P[A\cap B]=0.1$. Find $P[A \vert B']$. => 0.4286
+Let $P[A]=0.4,P[B]=0.3,P[A\cap B]=0.1$. Find $P[B \vert A']$. => 0.3333
+If events $A$ and $B$ are independent and $P[A]=0.7,P[B]=0.5$, find $P[A \cap B]$ => 0.35
+If events $A$ and $B$ are independent and $P[A]=0.7,P[B]=0.5$, find $P[A \cup B]$ => 0.85
+If events $A$ and $B$ are independent and $P[A]=0.7,P[B]=0.5$, find $P[A' \cap B']$ => 0.15
+An urn has 3 red and 3 green marbles. If I draw 3 with replacement, find the probability they are all the same color. => 0.25
+An urn has 3 red and 3 green marbles. If I draw 3 with replacement, find the probability at least two are red. => 0.5
+An urn has 3 red and 3 green marbles. If I draw 3 without replacement, find the probability they are all the same color. => 0.1
+An urn has 3 red and 3 green marbles. If I draw 3 without replacement, find the probability exactly two are red. => 0.45
+An urn has 10 red and 15 green marbles. If I draw 4 with replacement, find the probability there are two of each color. => 0.3456
+An urn has 10 red and 15 green marbles. If I draw 6 with replacement, find the probability there are two reds and four greens. => 0.311
+An urn has 10 red and 15 green marbles. If I draw 6 without replacement, find the probability there are two reds and four greens. => 0.3468
+An urn has 10 red and 15 green marbles. If I draw 3 without replacement, find the probability they are all green. => 0.1978
+A standard 6-sided die and a standard 8-sided die are rolled. Find the probability the number on the 6-sided die is larger than that on the 8-sided die. => 0.3125
+A standard 6-sided die and a standard 8-sided die are rolled. Find the probability the product of the two dice is prime. => 0.1458
+A standard 6-sided die and a standard 8-sided die are rolled. Find the probability the sum of the two dice is 10. => 0.1042
+A standard 6-sided die and a standard 8-sided die are rolled. Find the probability the product of the two dice is 24. => 0.0625
+A standard 6-sided die and a standard 8-sided die are rolled. Find the probability the numbers are relatively prime. => 0.6667
+An infinite apple orchard has $20\%$ blue, $30\%$ green, and $50\%$ yellow apples. If I pick 10, what is the probability I get 2 blue, 3 green, and 5 yellow apples? => 0.0851
+An infinite apple orchard has $20\%$ blue, $30\%$ green, and $50\%$ yellow apples. If I pick 5, what is the probability 3 are green? => 0.1323
+An infinite apple orchard has $20\%$ blue, $30\%$ green, and $50\%$ yellow apples. What is the probability I pick my 3rd yellow apple on the sixth attempt? => 0.1563
+An infinite apple orchard has $20\%$ blue, $30\%$ green, and $50\%$ yellow apples. If I pick 10, what is the probability I get 1 blue, 2 green, and 7 yellow apples? => 0.0506
+A sack has 20 marbles: 5 red, 5 yellow, 5 green, and 5 blue. If I pick 4 without replacement, what is the probability I get one of each color? => 0.1290
+A sack has 20 marbles: 5 red, 5 yellow, 5 green, and 5 blue. If I pick 3 without replacement, what is the probability I only get two colors? => 0.5263
+A sack has 20 marbles: 5 red, 5 yellow, 5 green, and 5 blue. If I pick 2 without replacement, what is the probability they are the same color? => 0.2105
+A sack has 20 marbles: 5 red, 5 yellow, 5 green, and 5 blue. If I pick 8 without replacement, what is the probability I do not get the same amount of any color? => 0.0572
