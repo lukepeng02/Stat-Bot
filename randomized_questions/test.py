@@ -7,10 +7,10 @@ from discord.ext import commands
 from constants import COMMAND_LIST, extended_format
 
 random_problems = {
-        'Tom the Turkey lives in a coop with &(c&) other turkeys. This Thanksgiving season, &(b&) turkeys ' +
-        'are randomly ``selected" every day and replaced with other turkeys. What is the probability ' +
-        'Tom is ``selected" on day &(a&)?=>&((1 - b / (c + 1)) ** (a - 1) * (b / (c + 1))&)':
-        {'a': 'randint(2,10)', 'b': 'randint(20,80)' ,'c': 'randint(249, 349)'},
+        'Suppose Albert tells his students to read the syllabus according to a ' +
+        'Poisson distribution with mean &(l&) times per week. Find the probability he does so ' +
+        '&(a&) times this week.=>&(l**a*exp(-1 * l)/factorial(a)&)':
+        {'l': 'randint(5,10)', 'a': 'randint(2,12)'},
         }
 
 
@@ -23,12 +23,8 @@ class Test(commands.Cog):
         random_question, variables = random.choice(list(random_problems.items()))
         formatted_question, formatted_answer = extended_format(random_question, variables)
 
-        try:
-            preview(formatted_question, viewer="file", filename="generated_latex/output.png")
-            await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
-        except:
-            await ctx.send("Please slow down!")
-            return
+        preview(formatted_question, viewer="file", filename="generated_latex/output.png")
+        await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
 
         def check(msg):
             return msg.author == ctx.author and msg.channel == ctx.channel

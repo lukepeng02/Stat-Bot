@@ -12,6 +12,10 @@ misc_prob_questions = open("hardcoded/misc_prob_questions.txt", 'r')
 MISC_PROB_QUESTIONS_LINES = misc_prob_questions.read().splitlines()
 misc_prob_questions.close()
 
+dist_questions = open("hardcoded/dist_questions.txt", 'r')
+DIST_QUESTIONS_LINES = dist_questions.read().splitlines()
+dist_questions.close()
+
 bivar_questions = open("hardcoded/bivarq.txt", 'r')
 BIVAR_QUESTIONS_LINES = bivar_questions.read().splitlines()
 bivar_questions.close()
@@ -24,7 +28,7 @@ def extended_format(input, vars):
             ints = [int(i) for i in (value[8:len(value) - 1].split(","))]
             to_add = random.randint(ints[0], ints[1])
         elif value.startswith("randuni"):
-            vals = (value[8:len(value) - 1].split(","))
+            vals = value[8:len(value) - 1].split(",")
             to_add = round(random.uniform(float(vals[0]), float(vals[1])), int(vals[2]))
         new_dict[symbols(key)] = to_add
 

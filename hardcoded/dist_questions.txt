@@ -1,0 +1,20 @@
+Zoe receives phone calls according to a Poisson process with a rate of 2.4 calls per hour. Find the probability it takes between 1 and 2 hours for her to receive her 4th one. => 0.4845
+Zoe receives phone calls according to a Poisson process with a rate of 2.4 calls per hour. Find the probability it takes between 2 and 3 hours for her to receive her 6th one. => 0.3751
+Let $X$ have a uniform distribution with nonzero probability exclusively in the interval $[3.5, 6]$. Find $Var[X]$. => 0.5208
+Let $X \sim N(3,6)$. Find $P[X>5]$. => 0.2071
+Let $X \sim N(3,6)$. Find $P[X<5]$. => 0.7929
+Let $X \sim N(-5,16)$. Find $P[X<0]$. => 0.8944
+Let $X \sim N(-5,16)$. Find $P[X>-4]$. => 0.4013
+Let $X \sim N(7,4)$ and $Y=4X+7Z$. Find $P[Y<20]$. => 0.2259
+Let $X \sim N(9,5)$ and $Y=3X+10Z$. Find $P[Y<30]$. => 0.5984
+Consider $X \sim N(5.73, \sigma^2)$. If $P[X>7.25]=0.14$, find $\sigma$. => 1.407
+Consider $X \sim N(3.63, \sigma^2)$. If $P[X<3.41]=0.44$, find $\sigma$. => 1.4573
+Let $X$ have pdf $f(x)=-\frac{3}{4}x^2+\frac{3}{2}x$ in the interval $x\in [0,2]$. Find $E[X^2]$. => 1.2
+Let $X \sim N(3,5)$ and $Y \sim N(4,7)$. Find $P[2X+3Y<15]$. => 0.371
+Let $X \sim N(6,10)$. Find $P[4<X<7]$. => 0.3605
+Let $X \sim N(6,10)$. Find $P[2<X<6]$. => 0.397
+The number of patties SpongeBob makes per day follows a normal distribution with mean 150 and standard deviation 30. Find the probability he will make less than 130 today. => 0.242
+The number of patties SpongeBob makes per day follows a normal distribution with mean 150 and standard deviation 30. Find the probability he will make more than 110 today. => 0.9088
+The number of patties SpongeBob makes per day follows a normal distribution with mean 150 and standard deviation 30. Find the probability he will make between 140 and 170 today. => 0.3781
+Let $X \sim N(16,25)$. Find the 25th percentile of $X$. => 12.6276
+Let $X \sim N(16,25)$. Find $\alpha$ such that the area to the right of $\alpha$ is 0.025. => 25.7998
