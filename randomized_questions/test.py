@@ -7,10 +7,10 @@ from discord.ext import commands
 from constants import COMMAND_LIST, extended_format
 
 random_problems = {
-        'Suppose Albert tells his students to read the syllabus according to a ' +
-        'Poisson distribution with mean &(l&) times per week. Find the probability he does so ' +
-        '&(a&) times this week.=>&(l**a*exp(-1 * l)/factorial(a)&)':
-        {'l': 'randint(5,10)', 'a': 'randint(2,12)'},
+        'Let $\sigma_X=&(a&), \sigma_Y=&(b&)$, and $\\rho_{XY}=&(e&)$. Find $Var[&(c&)X-&(d&)Y]$.' +
+        '=>&((a**2*c**2+b**2*d**2-2*a*b*c*d*e)&)':
+        {'a': 'randint(3,7)', 'b': 'randint(3,7)', 'c': 'randint(2,5)', 'd': 'randint(2,5)',
+        'e': 'randuni(0.01,0.99,2)'},
         }
 
 

@@ -1,1 +1,1 @@
-Let $X \sim N(16,25)$. Find $\alpha$ such that the area to the right of $\alpha$ is 0.025. => 25.7998
+Consider the joint pdf $f(x,y)=\frac{x^2+xy}{27}$ when $x\in(0,3),y\in(0,2)$ (and zero otherwise). Compute $P[2X+3Y<6]$ => 0.2222
