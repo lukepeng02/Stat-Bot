@@ -5,15 +5,15 @@ from discord.ext import commands
 from constants import COMMAND_LIST, extended_format
 
 random_problems = {
-        'Consider $X_1,...,X_5$ with $f(x;p)=pe^{-px^2}, x>0, p>0$. Find the MLE ' +
-        'estimator of $p$ when $x_1 = &(a&), x_2 = &(b&), x_3 = &(c&), x_4 = &(d&), x_5 = &(e&)$' +
-        '=>&(5 / (a ** 2 + b ** 2 + c ** 2 + d ** 2 + e ** 2)&)':
+        'Consider $X_1,...,X_5$ with $f(x;\\theta)=\\frac{{1}}{{\\theta}}e^{{-\\frac{{x}}{{\\theta}}}}, ' +
+        'x\geq0, \\theta>0$. Find the MLE estimator of $\\theta$ when $x_1 = &(a&), x_2 = &(b&), ' +
+        'x_3 = &(c&), x_4 = &(d&), x_5 = &(e&)$=>&((a+b+c+d+e)/5&)':
         {'a': 'randint(3,6)', 'b': 'randint(3,6)', 'c': 'randint(3,6)', 'd': 'randint(3,6)',
         'e': 'randint(3,6)'},
 
-        'Consider $X_1,...,X_4$ with $f(x;t)=2t^2\cdot x e^{x^2/t}\cdot3^x, x>0, t>0$. Find the MLE ' +
-        'estimator of $t$ when $x_1 = &(a&), x_2 = &(b&), x_3 = &(c&), x_4 = &(d&)$' +
-        '=>&((a ** 2 + b ** 2 + c ** 2 + d ** 2) / 8&)':
+        'Consider $X_1,...,X_4$ with $f(x;p)=p^{{-2}}xe^{{-x/p}}, x>0, p>0$. Find the MLE ' +
+        'estimator of $p$ when $x_1 = &(a&), x_2 = &(b&), x_3 = &(c&), x_4 = &(d&)$' +
+        '=>&((a+b+c+d) / 8&)':
         {'a': 'randint(3,6)', 'b': 'randint(3,6)', 'c': 'randint(3,6)', 'd': 'randint(3,6)'},
 
         'Consider $X_1,...,X_4$ with $f(x)=\\frac{2p-x}{2p^2}, 0<x<2p, p>0$. Find the MOM ' +

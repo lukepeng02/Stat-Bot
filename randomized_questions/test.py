@@ -7,10 +7,10 @@ from discord.ext import commands
 from constants import COMMAND_LIST, extended_format
 
 random_problems = {
-        'Let $\sigma_X=&(a&), \sigma_Y=&(b&)$, and $\\rho_{XY}=&(e&)$. Find $Var[&(c&)X-&(d&)Y]$.' +
-        '=>&((a**2*c**2+b**2*d**2-2*a*b*c*d*e)&)':
-        {'a': 'randint(3,7)', 'b': 'randint(3,7)', 'c': 'randint(2,5)', 'd': 'randint(2,5)',
-        'e': 'randuni(0.01,0.99,2)'},
+        'Consider $X_1,...,X_4$ with $f(x;p)=p^{{-2}}xe^{{-x/p}}, x>0, p>0$. Find the MLE ' +
+        'estimator of $p$ when $x_1 = &(a&), x_2 = &(b&), x_3 = &(c&), x_4 = &(d&)$' +
+        '=>&((a+b+c+d) / 8&)':
+        {'a': 'randint(3,6)', 'b': 'randint(3,6)', 'c': 'randint(3,6)', 'd': 'randint(3,6)'},
         }
 
 
