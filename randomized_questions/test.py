@@ -7,10 +7,12 @@ from discord.ext import commands
 from constants import COMMAND_LIST, extended_format
 
 random_problems = {
-        'Consider $X_1,...,X_4$ with $f(x;p)=p^{{-2}}xe^{{-x/p}}, x>0, p>0$. Find the MLE ' +
-        'estimator of $p$ when $x_1 = &(a&), x_2 = &(b&), x_3 = &(c&), x_4 = &(d&)$' +
-        '=>&((a+b+c+d) / 8&)':
-        {'a': 'randint(3,6)', 'b': 'randint(3,6)', 'c': 'randint(3,6)', 'd': 'randint(3,6)'},
+        'Consider $X$ whose pmf is listed as the following ordered pairs in the format $(x,f(x))$: ' +
+        '$(0,3\\theta/5), (1,2\\theta/5), (2,3(1-\\theta)/5), (3,2(1-\\theta)/5)$, where ' +
+        '$\\theta\in[0,1]$. Find the MLE estimator of $\\theta$ when a sample of size 10 has the ' +
+        'following observed values: &(a&) 0(s), &(b&) 1(s), &(c&) 2(s), and &(10-a-b-c&) 3(s).' +
+        '=>&((12-5*(b+2*c+3*(10-a-b-c))/10)/10&)'
+        : {'a': 'randint(1,4)', 'b': 'randint(0,3)', 'c': 'randint(0,3)'},
         }
 
 
