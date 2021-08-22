@@ -1,1 +1,1 @@
-Consider the joint pdf $f(x,y)=\frac{x^2+xy}{27}$ when $x\in(0,3),y\in(0,2)$ (and zero otherwise). Compute $P[2X+3Y<6]$ => 0.2222
+Suppose the number of dollars Mr. Krabs makes per day follows a normal distribution with mean 4200 and variance 3600. Find the probability he makes more than \$4215 on exactly 3 out of 7 days next week. => 0.2906

@@ -2,7 +2,7 @@ import discord
 import random
 from sympy import *
 from discord.ext import commands
-from constants import COMMAND_LIST, extended_format
+from constants import COMMAND_LIST, PE_QUESTIONS_LINES, extended_format
 
 random_problems = {
         'Consider $X_1,...,X_5$ with pdf $f(x;\\theta)=\\frac{{1}}{{\\theta}}e^{{-\\frac{{x}}{{\\theta}}}}, ' +
@@ -49,19 +49,31 @@ random_problems = {
         '$(0,3\\theta/5), (1,2\\theta/5), (2,3(1-\\theta)/5), (3,2(1-\\theta)/5)$, where ' +
         '$\\theta\in[0,1]$. Find the MLE estimator of $\\theta$ when a sample of size 10 has the ' +
         'following observed values: &(a&) 0(s), &(b&) 1(s), &(c&) 2(s), and &(10-a-b-c&) 3(s).' +
-        '=>&((12-5*(b+2*c+3*(10-a-b-c))/10)/10&)'
-        : {'a': 'randint(1,4)', 'b': 'randint(0,3)', 'c': 'randint(0,3)'},
+        '=>&((12-5*(b+2*c+3*(10-a-b-c))/10)/10&)':
+        {'a': 'randint(1,4)', 'b': 'randint(0,3)', 'c': 'randint(0,3)'},
+
+        'Consider $X\sim N(&(a&),&(b&))$. Find the standard deviation of $\overline{{X}}$ when ' +
+        '$n=$&(c&).=>&(sqrt(b/c)&)':
+        {'a': 'randint(10,40)', 'b': 'randint(10,30)', 'c': 'randint(5,10)'},
         }
 
+hardcoded_problems = {}
+for line in PE_QUESTIONS_LINES:
+    hardcoded_problems[line.split(' => ')[0]] = line.split(' => ')[1]
 
 class Point_Estimation(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="peq", help="Answer a point estimation question")
+    @commands.command(name="peq", help="Answer a sampling/point estimation question")
     async def peq(self, ctx):
-        random_question, variables = random.choice(list(random_problems.items()))
-        formatted_question, formatted_answer = extended_format(random_question, variables)
+        choice = random.randrange(2 * len(random_problems) + len(hardcoded_problems))
+        formatted_question, formatted_answer = None, None
+        if choice in range(2 * len(random_problems)):
+            random_question, variables = random.choice(list(random_problems.items()))
+            formatted_question, formatted_answer = extended_format(random_question, variables)
+        else:
+            formatted_question, formatted_answer = random.choice(list(hardcoded_problems.items()))
 
         try:
             preview(formatted_question, viewer="file", filename="generated_latex/output.png")

@@ -20,6 +20,10 @@ bivar_questions = open("hardcoded/bivarq.txt", 'r')
 BIVAR_QUESTIONS_LINES = bivar_questions.read().splitlines()
 bivar_questions.close()
 
+pe_questions = open("hardcoded/point_est_questions.txt", 'r')
+PE_QUESTIONS_LINES = pe_questions.read().splitlines()
+pe_questions.close()
+
 def extended_format(input, vars):
     new_dict = {}
     for key, value in vars.items():
