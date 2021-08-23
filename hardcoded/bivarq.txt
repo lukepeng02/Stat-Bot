@@ -1,10 +1,3 @@
-Consider the joint pdf $f(x,y)=\frac{x+y}{8}$ when $x>0, y>0, y<4-2x$ (and zero otherwise). Compute $E[X]$ => 0.6667
-Consider the joint pdf $f(x,y)=\frac{x+y}{8}$ when $x>0, y>0, y<4-2x$ (and zero otherwise). Compute $E[Y]$ => 1.6667
-Consider the joint pdf $f(x,y)=\frac{x+y}{8}$ when $x>0, y>0, y<4-2x$ (and zero otherwise). Compute $Var[X]$ => 0.2222
-Consider the joint pdf $f(x,y)=\frac{x+y}{8}$ when $x>0, y>0, y<4-2x$ (and zero otherwise). Compute $Var[Y]$ => 0.9556
-Consider the joint pdf $f(x,y)=\frac{x+y}{8}$ when $x>0, y>0, y<4-2x$ (and zero otherwise). Compute $Cov[X,Y]$ => -0.3111
-Consider the joint pdf $f(x,y)=\frac{x+y}{8}$ when $x>0, y>0, y<4-2x$ (and zero otherwise). Compute $E[XY]$ => 0.8
-Consider the joint pdf $f(x,y)=\frac{x+y}{8}$ when $x>0, y>0, y<4-2x$ (and zero otherwise). Compute $P[X>1]$ => 0.25
 Consider the joint pmf $f(x,y)=\frac{1}{3}\cdot(\frac{2}{3})^x\cdot(\frac{1}{2})^y$ when $x=0,1,2,...$ and $y=1,2,...$ (and zero otherwise). Compute $E[X]$ => 2
 Consider the joint pmf $f(x,y)=\frac{1}{3}\cdot(\frac{2}{3})^x\cdot(\frac{1}{2})^y$ when $x=0,1,2,...$ and $y=1,2,...$ (and zero otherwise). Compute $E[Y]$ => 2
 Consider the joint pmf $f(x,y)=\frac{1}{3}\cdot(\frac{2}{3})^x\cdot(\frac{1}{2})^y$ when $x=0,1,2,...$ and $y=1,2,...$ (and zero otherwise). Compute $Var[X]$ => 6
@@ -12,13 +5,6 @@ Consider the joint pmf $f(x,y)=\frac{1}{3}\cdot(\frac{2}{3})^x\cdot(\frac{1}{2})
 Consider the joint pmf $f(x,y)=\frac{1}{3}\cdot(\frac{2}{3})^x\cdot(\frac{1}{2})^y$ when $x=0,1,2,...$ and $y=1,2,...$ (and zero otherwise). Compute $Cov[X,Y]$ => 0
 Consider the joint pmf $f(x,y)=\frac{1}{3}\cdot(\frac{2}{3})^x\cdot(\frac{1}{2})^y$ when $x=0,1,2,...$ and $y=1,2,...$ (and zero otherwise). Compute $E[XY]$ => 4
 Consider the joint pmf $f(x,y)=\frac{1}{3}\cdot(\frac{2}{3})^x\cdot(\frac{1}{2})^y$ when $x=0,1,2,...$ and $y=1,2,...$ (and zero otherwise). Compute $P[X>1]$ => 0.4444
-Consider the joint pdf $f(x,y)=e^{-x}e^{-y}$ when $x>0,y>0$ (and zero otherwise). Compute $E[X]$ => 1
-Consider the joint pdf $f(x,y)=e^{-x}e^{-y}$ when $x>0,y>0$ (and zero otherwise). Compute $E[Y]$ => 1
-Consider the joint pdf $f(x,y)=e^{-x}e^{-y}$ when $x>0,y>0$ (and zero otherwise). Compute $Var[X]$ => 1
-Consider the joint pdf $f(x,y)=e^{-x}e^{-y}$ when $x>0,y>0$ (and zero otherwise). Compute $Var[Y]$ => 1
-Consider the joint pdf $f(x,y)=e^{-x}e^{-y}$ when $x>0,y>0$ (and zero otherwise). Compute $E[XY]$ => 1
-Consider the joint pdf $f(x,y)=e^{-x}e^{-y}$ when $x>0,y>0$ (and zero otherwise). Compute $P[X>2]$ => 0.1353
-Consider the joint pdf $f(x,y)=e^{-x}e^{-y}$ when $x>0,y>0$ (and zero otherwise). Compute $P[X+2Y<4]$ => 0.7476
 Consider the joint pmf $f(x,y)=\frac{x^2y}{140}$ when $x\in\{1,2,3\},y\in\{1,2,3,4\}$ (and zero otherwise). Compute $E[X]$ => 2.5714
 Consider the joint pmf $f(x,y)=\frac{x^2y}{140}$ when $x\in\{1,2,3\},y\in\{1,2,3,4\}$ (and zero otherwise). Compute $E[Y]$ => 3
 Consider the joint pmf $f(x,y)=\frac{x^2y}{140}$ when $x\in\{1,2,3\},y\in\{1,2,3,4\}$ (and zero otherwise). Compute $Var[X]$ => 0.3878
@@ -26,13 +12,6 @@ Consider the joint pmf $f(x,y)=\frac{x^2y}{140}$ when $x\in\{1,2,3\},y\in\{1,2,3
 Consider the joint pmf $f(x,y)=\frac{x^2y}{140}$ when $x\in\{1,2,3\},y\in\{1,2,3,4\}$ (and zero otherwise). Compute $Cov[X,Y]$ => 0
 Consider the joint pmf $f(x,y)=\frac{x^2y}{140}$ when $x\in\{1,2,3\},y\in\{1,2,3,4\}$ (and zero otherwise). Compute $P[X$ is even $\cap$ $Y$ is even$]$ => 0.1714
 Consider the joint pmf $f(x,y)=\frac{x^2y}{140}$ when $x\in\{1,2,3\},y\in\{1,2,3,4\}$ (and zero otherwise). Compute $E[X^3]$ => 19.7143
-Consider the joint pdf $f(x,y)=\frac{5xy^2}{48}$ in the region bordered by $y=0,y=x,x+2y=3$ (and zero otherwise). Compute $E[X]$ => 2.6667
-Consider the joint pdf $f(x,y)=\frac{5xy^2}{48}$ in the region bordered by $y=0,y=x,x+2y=3$ (and zero otherwise). Compute $E[Y]$ => 1.1667
-Consider the joint pdf $f(x,y)=\frac{5xy^2}{48}$ in the region bordered by $y=0,y=x,x+2y=3$ (and zero otherwise). Compute $Var[X]$ => 0.6984
-Consider the joint pdf $f(x,y)=\frac{5xy^2}{48}$ in the region bordered by $y=0,y=x,x+2y=3$ (and zero otherwise). Compute $Var[Y]$ => 0.1627
-Consider the joint pdf $f(x,y)=\frac{5xy^2}{48}$ in the region bordered by $y=0,y=x,x+2y=3$ (and zero otherwise). Compute $E[XY]$ => 2.9524
-Consider the joint pdf $f(x,y)=\frac{5xy^2}{48}$ in the region bordered by $y=0,y=x,x+2y=3$ (and zero otherwise). Compute $Cov[X,Y]$ => -0.1587
-Consider the joint pdf $f(x,y)=\frac{5xy^2}{48}$ in the region bordered by $y=0,y=x,x+2y=3$ (and zero otherwise). Compute $P[X>\frac{3}{2}]$ => 0.0527
 Consider the joint pmf $f(x,y)=\frac{2x+3y}{152}$ when $x\in\{1,2,3,4\},y\in\{0,1,2,3\}$ (and zero otherwise). Compute $E[X]$ => 2.7632
 Consider the joint pmf $f(x,y)=\frac{2x+3y}{152}$ when $x\in\{1,2,3,4\},y\in\{0,1,2,3\}$ (and zero otherwise). Compute $E[Y]$ => 1.8947
 Consider the joint pmf $f(x,y)=\frac{2x+3y}{152}$ when $x\in\{1,2,3,4\},y\in\{0,1,2,3\}$ (and zero otherwise). Compute $Var[X]$ => 1.1807
@@ -47,10 +26,3 @@ Consider the joint pmf $f(x,y)=12(\frac{1}{4})^x(\frac{1}{5})^y$ when $x=1,2,3,.
 Consider the joint pmf $f(x,y)=12(\frac{1}{4})^x(\frac{1}{5})^y$ when $x=1,2,3,...,y=1,2,3,...$ (and zero otherwise). Compute $E[XY]$ => 1.6667
 Consider the joint pmf $f(x,y)=12(\frac{1}{4})^x(\frac{1}{5})^y$ when $x=1,2,3,...,y=1,2,3,...$ (and zero otherwise). Compute $P[X\text{ is divisible by 3}]$ => 0.0476
 Consider the joint pmf $f(x,y)=12(\frac{1}{4})^x(\frac{1}{5})^y$ when $x=1,2,3,...,y=1,2,3,...$ (and zero otherwise). Compute $P[Y\text{ is even}]$ => 0.1667
-Consider the joint pdf $f(x,y)=\frac{x^2+xy}{27}$ when $x\in(0,3),y\in(0,2)$ (and zero otherwise). Compute $E[X]$ => 2.1667
-Consider the joint pdf $f(x,y)=\frac{x^2+xy}{27}$ when $x\in(0,3),y\in(0,2)$ (and zero otherwise). Compute $E[Y]$ => 1.1111
-Consider the joint pdf $f(x,y)=\frac{x^2+xy}{27}$ when $x\in(0,3),y\in(0,2)$ (and zero otherwise). Compute $Var[X]$ => 0.4056
-Consider the joint pdf $f(x,y)=\frac{x^2+xy}{27}$ when $x\in(0,3),y\in(0,2)$ (and zero otherwise). Compute $Var[Y]$ => 0.321
-Consider the joint pdf $f(x,y)=\frac{x^2+xy}{27}$ when $x\in(0,3),y\in(0,2)$ (and zero otherwise). Compute $Cov[X,Y]$ => -0.0185
-Consider the joint pdf $f(x,y)=\frac{x^2+xy}{27}$ when $x\in(0,3),y\in(0,2)$ (and zero otherwise). Compute $P[X\times Y>4]$ => 0.1638
-Consider the joint pdf $f(x,y)=\frac{x^2+xy}{27}$ when $x\in(0,3),y\in(0,2)$ (and zero otherwise). Compute $P[2X+3Y<6]$ => 0.2222
