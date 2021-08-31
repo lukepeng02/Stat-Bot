@@ -2,7 +2,7 @@
 StatBot is a Discord bot that helps people learn statistics by asking questions and providing a response.
 
 ## Installation
-To install, run `pip3 install sympy` on the command line. Make sure that you also have a LaTeX program on your device, such as TeX Live (for Linux users).
+To install, run `pip3 install sympy scipy` on the command line. Make sure that you also have a LaTeX program on your device, such as TeX Live (for Linux users).
 
 ## Usage
 Here are some images of its actions:
