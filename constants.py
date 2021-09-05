@@ -41,8 +41,6 @@ def extended_format(input, vars):
         return new_dict
 
     new_dict = vars_to_nums()
-    a = 0.05
-    print(stats.t.ppf(a, 20))
 
     def substitute_regex(expression, reg, nums):
         subbed = expression
@@ -58,14 +56,45 @@ def extended_format(input, vars):
             if expression[index:index+7] == '@(tinv(':
                 end_index = expression[index+1:].index('@)') + index
 
-                first_expression = expression[index+7:end_index].split(",")[0]
-                second_expression = expression[index+7:end_index].split(",")[1]
+                args = expression[index+7:end_index].split(",")
+                first_expression = args[0]
+                second_expression = args[1]
 
-                first_value = float(round_if_needed(sympify(first_expression).subs(new_dict)))
-                second_value = float(round_if_needed(sympify(second_expression).subs(new_dict)))
+                area = float(round_if_needed(sympify(first_expression).subs(new_dict)))
+                deg_freedom = float(round_if_needed(sympify(second_expression).subs(new_dict)))
 
-                t_stat = round(stats.t.ppf(first_value, second_value), 8)
+                t_stat = round(stats.t.ppf(area, deg_freedom), 8)
                 nums = [t_stat]
+                expression = substitute_regex(expression, r'@\((.*?)@\)', nums)
+                break
+            elif expression[index:index+10] == '@(norminv(':
+                end_index = expression[index+1:].index('@)') + index
+
+                args = expression[index+10:end_index].split(",")
+                first_expression = args[0]
+                second_expression = args[1]
+                third_expression = args[2]
+
+                area = float(round_if_needed(sympify(first_expression).subs(new_dict)))
+                mean = float(round_if_needed(sympify(second_expression).subs(new_dict)))
+                st_dev = float(round_if_needed(sympify(third_expression).subs(new_dict)))
+
+                z_stat = round(stats.norm.ppf(area, loc=mean, scale=st_dev), 8)
+                nums = [z_stat]
+                expression = substitute_regex(expression, r'@\((.*?)@\)', nums)
+                break
+            elif expression[index:index+9] == '@(chiinv(':
+                end_index = expression[index+1:].index('@)') + index
+                
+                args = expression[index+9:end_index].split(",")
+                first_expression = args[0]
+                second_expression = args[1]
+
+                area = float(round_if_needed(sympify(first_expression).subs(new_dict)))
+                deg_freedom = float(round_if_needed(sympify(second_expression).subs(new_dict)))
+
+                chi_sq = round(stats.chi2.ppf(area, deg_freedom, loc=0, scale=1), 8)
+                nums = [chi_sq]
                 expression = substitute_regex(expression, r'@\((.*?)@\)', nums)
                 break
 

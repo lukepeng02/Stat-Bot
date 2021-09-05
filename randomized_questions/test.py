@@ -7,9 +7,12 @@ from discord.ext import commands
 from constants import COMMAND_LIST, extended_format
 
 random_problems = {
-        'Consider a t-distribution with &(a&) degrees of freedom. Find $t/2$ such that the area ' +
-        'to the left of $t$ is &(0.5*b&).=>&(@(tinv(0.5*b,a)@)/2&)'
-        : {'a': 'randint(10,40)', 'b': 'randuni(0.001,0.999,3)'},
+        '&(a&) males (pop.1) and &(b&) females (pop.2) were asked whether they liked black licorice. &(d&) ' +
+        'males and &(e&) females responded ``yes". Find the lower confidence limit of a &(100-c&)$\%$ ' +
+        'confidence interval for the true difference in proportions, of people who enjoy black licorice, ' +
+        'between the two groups.=>&((d/a-e/b)+@(norminv(c/200,0,1)@)* sqrt((a-d)*d/a**3+(b-e)*e/b**3)&)':
+        {'a': 'randint(40,60)', 'b': 'randint(30,50)', 'c': 'randint(2,10)', 'd': 'randint(5,15)',
+        'e': 'randint(0,10)'},
         }
 
 
