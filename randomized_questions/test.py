@@ -7,12 +7,11 @@ from discord.ext import commands
 from constants import COMMAND_LIST, extended_format
 
 random_problems = {
-        '&(a&) males (pop.1) and &(b&) females (pop.2) were asked whether they liked black licorice. &(d&) ' +
-        'males and &(e&) females responded ``yes". Find the lower confidence limit of a &(100-c&)$\%$ ' +
-        'confidence interval for the true difference in proportions, of people who enjoy black licorice, ' +
-        'between the two groups.=>&((d/a-e/b)+@(norminv(c/200,0,1)@)* sqrt((a-d)*d/a**3+(b-e)*e/b**3)&)':
-        {'a': 'randint(40,60)', 'b': 'randint(30,50)', 'c': 'randint(2,10)', 'd': 'randint(5,15)',
-        'e': 'randint(0,10)'},
+        'Ash wants to form a &(100-c&)$\%$ confidence interval with width &(a&) pound(s) for the ' +
+        'average weight of a Snorlax. If the Pokédex claims the population standard deviation ' +
+        'is &(b&) pounds, find the appropriate sample size of this study.' +
+        '=>&(ceiling((b*@(norminv(1-c/200,0,1)@)/a)**2)&)':
+        {'a': 'randuni(0.5,1,1)', 'b': 'randint(10,20)', 'c': 'randint(2,10)'},
         }
 
 

@@ -11,11 +11,24 @@ random_problems = {
         '(Assume it is normally distributed.)=>&(100*a+(@(norminv(c/200,0,1)@)*10*b/sqrt(30))&)':
         {'a': 'randint(15,25)', 'b': 'randint(15,25)', 'c': 'randint(2,10)'},
 
+        'In a sample of 30 students, the average number of calories eaten per day was &(100*a&). ' +
+        'If it is known that the population standard deviation is &(10*b&) calories, ' +
+        'find the lower limit of a &(100-c&)$\%$ confidence lower bound for the population mean. ' +
+        '(Assume it is normally distributed.)=>&(100*a+(@(norminv(c/100,0,1)@)*10*b/sqrt(30))&)':
+        {'a': 'randint(15,25)', 'b': 'randint(15,25)', 'c': 'randint(2,10)'},
+
         'At Pirdew University, a sample of &(a&) students found the average IQ to be &(b&). ' +
         'If it is known that the population standard deviation is 16 IQ points, ' +
         'find the lower confidence limit of a &(100-c&)$\%$ confidence interval for the average ' +
         'student IQ at Pirdew. (Assume it is normally distributed.)' +
         '=>&(b+(@(norminv(c/200,0,1)@)*16/sqrt(a))&)':
+        {'a': 'randint(50,75)', 'b': 'randint(85,105)', 'c': 'randint(2,10)'},
+
+        'At Pirdew University, a sample of &(a&) students found the average IQ to be &(b&). ' +
+        'If it is known that the population standard deviation is 16 IQ points, ' +
+        'find the lower limit of a &(100-c&)$\%$ confidence lower bound for the average ' +
+        'student IQ at Pirdew. (Assume it is normally distributed.)' +
+        '=>&(b+(@(norminv(c/100,0,1)@)*16/sqrt(a))&)':
         {'a': 'randint(50,75)', 'b': 'randint(85,105)', 'c': 'randint(2,10)'},
 
         'A survey is taken at the local Sandwich Queen joint. &(a&) people participated, ' +
@@ -39,10 +52,23 @@ random_problems = {
         '=>&(b-(@(tinv(c/200,a-1)@)/sqrt(a))&)':
         {'a': 'randint(5,10)', 'b': 'randuni(5,6,1)', 'c': 'randint(2,10)'},
 
+        'Luke collects data on the number of hours his neighbors spend partying loudly ' +
+        'per day. Suppose the sample size is &(a&) days, with mean &(b&) hours and standard ' +
+        'deviation 1 hour. Find the upper limit of a &(100-c&)$\%$ confidence ' +
+        'upper bound for the average number of hours. (Assume it is normally distributed.)' +
+        '=>&(b-(@(tinv(c/100,a-1)@)/sqrt(a))&)':
+        {'a': 'randint(5,10)', 'b': 'randuni(5,6,1)', 'c': 'randint(2,10)'},
+
         'For &(a&) days, Charlie produces an average of &(b&) ponds of chocolate per day, with ' +
         'a standard deviation of &(d&) pounds. Find the upper confidence limit of a ' +
         '&(100-c&)$\%$ confidence interval for the number of pounds of chocolate Charlie produces ' +
         'on average per day. (Assume it is normally distributed.)=>&(b-(@(tinv(c/200,a-1)@)*d/sqrt(a))&)':
+        {'a': 'randint(20,30)', 'b': 'randint(60,70)', 'c': 'randint(2,10)', 'd': 'randint(4,8)'},
+
+        'For &(a&) days, Charlie produces an average of &(b&) ponds of chocolate per day, with ' +
+        'a standard deviation of &(d&) pounds. Find the upper limit of a ' +
+        '&(100-c&)$\%$ confidence upper bound for the number of pounds of chocolate Charlie produces ' +
+        'on average per day. (Assume it is normally distributed.)=>&(b-(@(tinv(c/100,a-1)@)*d/sqrt(a))&)':
         {'a': 'randint(20,30)', 'b': 'randint(60,70)', 'c': 'randint(2,10)', 'd': 'randint(4,8)'},
 
         'A survey of &(a&) people is conducted at the Blue Tiger bar on a Friday night. ' +
@@ -65,11 +91,25 @@ random_problems = {
         '=>&(b/a-(@(norminv(c/200,0,1)@)*sqrt((b/a*(1-b/a)/a)))&)':
         {'a': 'randint(150,200)', 'b': 'randint(100,130)', 'c': 'randint(2,10)'},
 
+        'A survey of &(a&) ``fans" of Enlightenment (a famous grunge band) was conducted. ' +
+        'It was discovered that &(b&) of the participants had only heard of their signature song, ' +
+        '``Reeks of Juvenile Sweat". Find the upper limit of a &(100-c&)$\%$ confidence ' +
+        'upper bound for the proportion of all Enlightenment ``fans" who only know their signature song.' +
+        '=>&(b/a-(@(norminv(c/100,0,1)@)*sqrt((b/a*(1-b/a)/a)))&)':
+        {'a': 'randint(150,200)', 'b': 'randint(100,130)', 'c': 'randint(2,10)'},
+
         'A survey of &(a&) FAR residents was conducted. In response to the yes/no question, ' +
         '``Do you like it here?", &(b&) of the participants responded with ``no". Find the upper ' +
         'confidence limit of a &(100-c&)$\%$ confidence interval for the proportion of all FAR ' +
         'residents who do not enjoy living there.' +
         '=>&(b/a-(@(norminv(c/200,0,1)@)*sqrt((b/a*(1-b/a)/a)))&)':
+        {'a': 'randint(150,200)', 'b': 'randint(100,130)', 'c': 'randint(2,10)'},
+
+        'A survey of &(a&) FAR residents was conducted. In response to the yes/no question, ' +
+        '``Do you like it here?", &(b&) of the participants responded with ``no". Find the upper ' +
+        'limit of a &(100-c&)$\%$ confidence upper bound for the proportion of all FAR ' +
+        'residents who do not enjoy living there.' +
+        '=>&(b/a-(@(norminv(c/100,0,1)@)*sqrt((b/a*(1-b/a)/a)))&)':
         {'a': 'randint(150,200)', 'b': 'randint(100,130)', 'c': 'randint(2,10)'},
 
         'A survey of &(a&) Americans was conducted. It was discovered that &(b&) of the ' +
@@ -92,6 +132,12 @@ random_problems = {
         '=>&((a-1)*b/@(chiinv(c/200,a-1)@)&)':
         {'a': 'randint(50,70)', 'b': 'randuni(1.0,2.5,1)', 'c': 'randint(2,10)'},
 
+        'At a water bottling plant, WALL-E fills 500-mL bottles. If a sample of &(a&) bottles ' +
+        'is collected and the variance is found to be &(b&) mL$^2$, find the upper limit ' +
+        'of a &(100-c&)$\%$ confidence upper bound for the variance of bottle filling.' +
+        '=>&((a-1)*b/@(chiinv(c/100,a-1)@)&)':
+        {'a': 'randint(50,70)', 'b': 'randuni(1.0,2.5,1)', 'c': 'randint(2,10)'},
+
         'To practice for the school archery team tryouts, Katniss shoots &(a&) arrows at a target. ' +
         'The variance of the distance to the center is &(b&) in.$^2$. Find the lower confidence limit ' +
         'of a &(100-c&)$\%$ confidence interval for the true variance.' +
@@ -103,6 +149,13 @@ random_problems = {
         'temperatures, resulting in a variance of &(b&) $^{\circ}$F$^2$. Find the lower confidence ' +
         'limit of a &(100-c&)$\%$ confidence interval for the true standard deviation.' +
         '=>&(sqrt((a-1)*b/@(chiinv(1-c/200,a-1)@))&)':
+        {'a': 'randint(20,30)', 'b': 'randuni(0.5,1.0,1)', 'c': 'randint(2,10)'},
+
+        'Suppose Eli\'s Electronics manufactures thermostats. On inspection day, a manager randomly ' +
+        'tests &(a&) products and measures the difference between the observed and expected ' +
+        'temperatures, resulting in a variance of &(b&) $^{\circ}$F$^2$. Find the lower ' +
+        'limit of a &(100-c&)$\%$ confidence lower bound for the true standard deviation.' +
+        '=>&(sqrt((a-1)*b/@(chiinv(1-c/100,a-1)@))&)':
         {'a': 'randint(20,30)', 'b': 'randuni(0.5,1.0,1)', 'c': 'randint(2,10)'},
 
         'Suppose Chloe hoards treats and gambles them with the other dogs on the block every week. ' +
@@ -200,7 +253,11 @@ random_problems = {
         {'a': 'randint(40,60)', 'b': 'randint(30,50)', 'c': 'randint(2,10)', 'd': 'randint(5,15)',
         'e': 'randint(0,10)'},
 
-        
+        'Ash wants to form a &(100-c&)$\%$ confidence interval with width &(a&) pound(s) for the ' +
+        'average weight of a Snorlax. If the Pokédex claims the population standard deviation ' +
+        'is &(b&) pounds, find the appropriate sample size of this study.' +
+        '=>&(ceiling((b*@(norminv(1-c/200,0,1)@)/a)**2)&)':
+        {'a': 'randuni(0.5,1,1)', 'b': 'randint(10,20)', 'c': 'randint(2,10)'},
         }
 
 class Confidence_Intervals(commands.Cog):
