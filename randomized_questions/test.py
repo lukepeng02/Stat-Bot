@@ -4,14 +4,17 @@ import discord
 import random
 from sympy import *
 from discord.ext import commands
-from constants import COMMAND_LIST, extended_format
+from globals import extended_format, send_and_check
 
 random_problems = {
-        'Ash wants to form a &(100-c&)$\%$ confidence interval with width &(a&) pound(s) for the ' +
-        'average weight of a Snorlax. If the Pokédex claims the population standard deviation ' +
-        'is &(b&) pounds, find the appropriate sample size of this study.' +
-        '=>&(ceiling((b*@(norminv(1-c/200,0,1)@)/a)**2)&)':
-        {'a': 'randuni(0.5,1,1)', 'b': 'randint(10,20)', 'c': 'randint(2,10)'},
+        'A survey of &(a&) fans of Enlightenment (a famous grunge band) was conducted. ' +
+        '&(b&) participants believed the band made better music than Pistols and Poppies, a ' +
+        'hard rock band. Of these, &(d&) had never even listened to a single Pistols and Poppies song. ' +
+        'Find the upper limit of a &(100-c&)$\%$ confidence interval for the proportion of all ' +
+        'Enlightenment fans who believed the band made better music than Pistols and Poppies, but ' +
+        'had never even listened to any of their songs.' +
+        '=>&(d/a-(@(norminv(c/200,0,1)@)*sqrt((d/a*(1-d/a)/a)))&)':
+        {'a': 'randint(150,200)', 'b': 'randint(80,100)', 'c': 'randint(2,10)', 'd': 'randint(60,75)'},
         }
 
 
@@ -23,28 +26,7 @@ class Test(commands.Cog):
     async def test(self, ctx):
         random_question, variables = random.choice(list(random_problems.items()))
         formatted_question, formatted_answer = extended_format(random_question, variables)
-
-        preview(formatted_question, viewer="file", filename="generated_latex/output.png")
-        await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
-
-        def check(msg):
-            return msg.author == ctx.author and msg.channel == ctx.channel
-
-        msg = await self.bot.wait_for("message", check=check)
-        if msg.content == formatted_answer:
-            try:
-                preview("Nice job!", viewer="file", filename="generated_latex/output.png")
-                await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
-            except:
-                await ctx.send("Nice job!")
-        elif msg.content in COMMAND_LIST:
-            pass
-        else:
-            try:
-                preview(f"Oof! The correct answer is {formatted_answer}", viewer="file", filename="generated_latex/output.png")
-                await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
-            except:
-                pass
+        await send_and_check(formatted_question, formatted_answer, self.bot, ctx)
 
 def setup(bot):
     bot.add_cog(Test(bot))

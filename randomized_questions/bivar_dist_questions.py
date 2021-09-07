@@ -2,7 +2,7 @@ import discord
 import random
 from sympy import *
 from discord.ext import commands
-from constants import COMMAND_LIST, BIVAR_QUESTIONS_LINES, extended_format
+from globals import BIVAR_QUESTIONS_LINES, extended_format, send_and_check
 
 random_problems = {
         'Let $\sigma_X=&(a&), \sigma_Y=&(b&)$, and $Var[&(c&)X-&(d&)Y]=&(e&)$. Find $\\rho_{XY}$.' +
@@ -34,31 +34,7 @@ class Bivariate_Distributions(commands.Cog):
         else:
             formatted_question, formatted_answer = random.choice(list(hardcoded_problems.items()))
 
-        try:
-            preview(formatted_question, viewer="file", filename="generated_latex/output.png")
-            await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
-        except:
-            await ctx.send("Please slow down!")
-            return
-
-        def check(msg):
-            return msg.author == ctx.author and msg.channel == ctx.channel
-
-        msg = await self.bot.wait_for("message", check=check)
-        if msg.content == formatted_answer:
-            try:
-                preview("Nice job!", viewer="file", filename="generated_latex/output.png")
-                await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
-            except:
-                await ctx.send("Nice job!")
-        elif msg.content in COMMAND_LIST:
-            pass
-        else:
-            try:
-                preview(f"Oof! The correct answer is {formatted_answer}", viewer="file", filename="generated_latex/output.png")
-                await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
-            except:
-                pass
+        await send_and_check(formatted_question, formatted_answer, self.bot, ctx)
 
 def setup(bot):
     bot.add_cog(Bivariate_Distributions(bot))

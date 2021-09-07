@@ -2,7 +2,7 @@ import discord
 import random
 from sympy import *
 from discord.ext import commands
-from constants import COMMAND_LIST, PROB_QUESTIONS_LINES
+from globals import PROB_QUESTIONS_LINES, send_and_check
 
 problems = {}
 for line in PROB_QUESTIONS_LINES:
@@ -14,32 +14,9 @@ class Probability(commands.Cog):
 
     @commands.command(name="probq", help="Answer a probability question")
     async def probq(self, ctx):
-        random_question, random_answer = random.choice(list(problems.items()))
-        try:
-            preview(random_question, viewer="file", filename="generated_latex/output.png")
-            await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
-        except:
-            await ctx.send("Please slow down!")
-            return
+        formatted_question, formatted_answer = random.choice(list(problems.items()))
 
-        def check(msg):
-            return msg.author == ctx.author and msg.channel == ctx.channel
-
-        msg = await self.bot.wait_for("message", check=check)
-        if msg.content == random_answer:
-            try:
-                preview("Nice job!", viewer="file", filename="generated_latex/output.png")
-                await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
-            except:
-                await ctx.send("Nice job!")
-        elif msg.content in COMMAND_LIST:
-            pass
-        else:
-            try:
-                preview(f"Oof! The correct answer is {random_answer}", viewer="file", filename="generated_latex/output.png")
-                await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
-            except:
-                pass
+        await send_and_check(formatted_question, formatted_answer, self.bot, ctx)
 
 def setup(bot):
     bot.add_cog(Probability(bot))

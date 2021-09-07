@@ -2,7 +2,7 @@ import discord
 import random
 from sympy import *
 from discord.ext import commands
-from constants import COMMAND_LIST, extended_format
+from globals import extended_format, send_and_check
 
 random_problems = {
         'In a sample of 30 students, the average number of calories eaten per day was &(100*a&). ' +
@@ -78,7 +78,7 @@ random_problems = {
         '=>&(b-(@(tinv(c/200,a-1)@)*2/sqrt(a))&)':
         {'a': 'randint(20,30)', 'b': 'randint(7,13)', 'c': 'randint(2,10)'},
 
-        'In &(a&) days, Michael Phelps consumed an average of &(100*b&) calories, with a standard ' +
+        'In &(a&) days, Michael Phelps consumed an average of &(100*b&) calories per day, with a standard ' +
         'deviation of &(100*d&). Find the lower confidence limit of a &(100-c&)$\%$ confidence interval ' +
         'for the average number of calories he consumes per day. (Assume it is normally distributed.)' +
         '=>&(100*b+(@(tinv(c/200,a-1)@)*100*d/sqrt(a))&)':
@@ -97,6 +97,15 @@ random_problems = {
         'upper bound for the proportion of all Enlightenment ``fans" who only know their signature song.' +
         '=>&(b/a-(@(norminv(c/100,0,1)@)*sqrt((b/a*(1-b/a)/a)))&)':
         {'a': 'randint(150,200)', 'b': 'randint(100,130)', 'c': 'randint(2,10)'},
+
+        'A survey of &(a&) fans of Enlightenment (a famous grunge band) was conducted. ' +
+        '&(b&) participants believed the band made better music than Pistols and Poppies, a ' +
+        'hard rock band. Of these, &(d&) had never even listened to a single Pistols and Poppies song. ' +
+        'Find the upper limit of a &(100-c&)$\%$ confidence interval for the proportion of all ' +
+        'Enlightenment fans who believed the band made better music than Pistols and Poppies, but ' +
+        'had never even listened to any of their songs.' +
+        '=>&(d/a-(@(norminv(c/200,0,1)@)*sqrt((d/a*(1-d/a)/a)))&)':
+        {'a': 'randint(150,200)', 'b': 'randint(80,100)', 'c': 'randint(2,10)', 'd': 'randint(60,75)'},
 
         'A survey of &(a&) FAR residents was conducted. In response to the yes/no question, ' +
         '``Do you like it here?", &(b&) of the participants responded with ``no". Find the upper ' +
@@ -269,31 +278,7 @@ class Confidence_Intervals(commands.Cog):
         random_question, variables = random.choice(list(random_problems.items()))
         formatted_question, formatted_answer = extended_format(random_question, variables)
 
-        try:
-            preview(formatted_question, viewer="file", filename="generated_latex/output.png")
-            await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
-        except:
-            await ctx.send("Please slow down!")
-            return
-
-        def check(msg):
-            return msg.author == ctx.author and msg.channel == ctx.channel
-
-        msg = await self.bot.wait_for("message", check=check)
-        if msg.content == formatted_answer:
-            try:
-                preview("Nice job!", viewer="file", filename="generated_latex/output.png")
-                await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
-            except:
-                await ctx.send("Nice job!")
-        elif msg.content in COMMAND_LIST:
-            pass
-        else:
-            try:
-                preview(f"Oof! The correct answer is {formatted_answer}", viewer="file", filename="generated_latex/output.png")
-                await ctx.send(file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
-            except:
-                pass
+        await send_and_check(formatted_question, formatted_answer, self.bot, ctx)
 
 def setup(bot):
     bot.add_cog(Confidence_Intervals(bot))

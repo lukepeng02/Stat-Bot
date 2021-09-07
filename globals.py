@@ -1,9 +1,13 @@
 import random
+import discord
 from sympy import *
 from scipy import stats
 from re import sub
 
-COMMAND_LIST = ['!help', '!ansformat', '!probq', '!miscprobq', '!distq', '!bivarq', '!peq', '!ciq']
+COMMAND_LIST = ['!help', '!ansformat', '!probq', '!miscprobq', '!distq', '!bivarq', '!peq', '!ciq',
+    '!htq', '!test']
+
+DELETE_EMOJI = '🗑'
 
 prob_questions = open("hardcoded/prob_questions.txt", 'r')
 PROB_QUESTIONS_LINES = prob_questions.read().splitlines()
@@ -141,3 +145,34 @@ def round_if_needed(val):
         return float(val)
     else:
         return round(float(val), 4)
+
+async def send_and_check(formatted_question, formatted_answer, bot, ctx):
+    preview(formatted_question, viewer="file", filename="generated_latex/output.png")
+    sent_question = await ctx.send(ctx.author.mention, file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
+    await sent_question.add_reaction(DELETE_EMOJI)
+
+    def check(msg):
+        return msg.author == ctx.author and msg.channel == ctx.channel
+
+    msg = await bot.wait_for("message", check=check)
+    if msg.content not in COMMAND_LIST:
+        await msg.add_reaction(DELETE_EMOJI)
+    else:
+        return
+    if msg.content == formatted_answer:
+        try:
+            preview("Nice job!", viewer="file", filename="generated_latex/output.png")
+            sent_correct = await ctx.send(ctx.author.mention, file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
+            await sent_correct.add_reaction(DELETE_EMOJI)
+        except:
+            sent_correct = await ctx.send(f"{ctx.author.mention} Nice job!")
+            await sent_correct.add_reaction(DELETE_EMOJI)
+    else:
+        try:
+            preview(f"Oof! The correct answer is {formatted_answer}",
+                    viewer="file", filename="generated_latex/output.png")
+            sent_incorrect = await ctx.send(ctx.author.mention,
+                    file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
+            await sent_incorrect.add_reaction(DELETE_EMOJI)
+        except:
+            pass
