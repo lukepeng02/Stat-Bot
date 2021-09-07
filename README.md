@@ -1,5 +1,5 @@
 # StatBot
-StatBot is a Discord bot that helps people learn statistics by asking questions and providing a response.
+StatBot is a Discord bot that helps people learn introductory probability and statistics by asking questions and providing a response.
 
 ## Installation
 To install, run `pip3 install sympy scipy` on the command line. Make sure that you also have a LaTeX program on your device, such as TeX Live (for Linux users).
@@ -18,3 +18,4 @@ Here are some images of its actions:
 `!distq`: Answer a distribution question<br/>
 `!bivarq`: Answer a bivariate distribution question<br/>
 `!peq`: Answer a point estimation question<br/>
+`!ciq`: Answer a confidence interval question<br/>
