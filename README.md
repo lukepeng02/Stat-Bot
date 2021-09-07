@@ -7,8 +7,8 @@ To install, run `pip3 install sympy scipy` on the command line. Make sure that y
 ## Usage
 Here are some images of its actions:
 
-![image](https://user-images.githubusercontent.com/73120632/128464788-b45fb60d-4520-4ca5-9600-25a609bac852.png)
-![image](https://user-images.githubusercontent.com/73120632/128464868-fad40aa2-eefe-4cd8-af31-70acd0734eb1.png)
+![image](https://user-images.githubusercontent.com/73120632/132280802-75bf51b4-f00f-4682-b031-c9390e1fd1f4.png)
+![image](https://user-images.githubusercontent.com/73120632/132280853-b7f873cb-2958-42be-a1ff-9c939b2a2dbe.png)
 
 ## Commands
 `!help`: Shows a list of all commands<br/>
