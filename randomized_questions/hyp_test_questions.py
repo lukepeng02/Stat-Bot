@@ -16,7 +16,8 @@ class Hypothesis_Testing(commands.Cog):
     @commands.Cog.listener()
     async def on_reaction_add(self, reaction, user):
         if not user.bot and reaction.emoji == DELETE_EMOJI:
-            await reaction.message.delete()
+            if reaction.message.author.id == user.id or user.mentioned_in(reaction.message):
+                await reaction.message.delete()
 
     @commands.command(name="htq", help="Answer a hypothesis testing question")
     async def htq(self, ctx):
