@@ -231,13 +231,12 @@ random_problems = {
         {'a': 'randint(30,40)', 'b': 'randint(40,50)', 'c': 'randint(2,10)', 'd': 'randint(5,15)',
         'e': 'randint(20,30)', 'f': 'randint(2,4)', 'g': 'randint(4,8)'},
 
-        '&(a&) male-female couples were asked, "How many annoying habits does your significant ' +
-        'other have?" For each couple, the difference in the male\'s response and the female\'s ' +
-        'response was recorded. The average was &(b&) habits, and the standard ' +
-        'deviation was &(d&). Find the lower confidence limit of a &(100-c&)$\%$ confidence interval ' +
-        'for the true average difference in the number of bad habits across all male-female couples.' +
-        '=>&(b+@(tinv(c/200,a-1)@)*d/sqrt(a)&)':
-        {'a': 'randint(30,40)', 'b': 'randint(-10,-2)', 'c': 'randint(2,10)', 'd': 'randint(3,5)'},
+        'A survey of &(a&) people was conducted. The difference in the number of Kleenex used daily in ' +
+        'the summer and winter was recorded for each person. The average was &(b&) Kleenex, and the ' +
+        'standard deviation was &(d&). Find the lower confidence limit of a &(100-c&)$\%$ confidence ' +
+        'interval for the true average difference in the number of Kleenex used daily in the summer and ' +
+        'winter.=>&(b+@(tinv(c/200,a-1)@)*d/sqrt(a)&)':
+        {'a': 'randint(30,40)', 'b': 'randint(-10,-5)', 'c': 'randint(2,10)', 'd': 'randint(3,5)'},
 
         '&(a&) people have their IQ recorded before their very first day of classes at Pirdew ' +
         'University. After graduating, this figure is tested again. The average change in IQ was &(b&), ' +
