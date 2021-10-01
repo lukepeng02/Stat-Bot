@@ -1,5 +1,6 @@
 import random
 import discord
+import os
 from sympy import *
 from scipy import stats
 from re import sub
@@ -149,6 +150,8 @@ def round_if_needed(val):
 async def send_and_check(formatted_question, formatted_answer, bot, ctx):
     preview(formatted_question, viewer="file", filename="generated_latex/output.png")
     sent_question = await ctx.send(ctx.author.mention, file=discord.File(f"./generated_latex/output.png", filename="LaTeX_output.png"))
+    if os.path.exists("generated_latex/output.png"):
+        os.remove("generated_latex/output.png")
     await sent_question.add_reaction(DELETE_EMOJI)
 
     def check(msg):
@@ -167,6 +170,8 @@ async def send_and_check(formatted_question, formatted_answer, bot, ctx):
         except:
             sent_correct = await ctx.send(f"{ctx.author.mention} Nice job!")
             await sent_correct.add_reaction(DELETE_EMOJI)
+        if os.path.exists("generated_latex/output.png"):
+            os.remove("generated_latex/output.png")
     else:
         try:
             preview(f"Oof! The correct answer is {formatted_answer}",
@@ -176,3 +181,5 @@ async def send_and_check(formatted_question, formatted_answer, bot, ctx):
             await sent_incorrect.add_reaction(DELETE_EMOJI)
         except:
             pass
+        if os.path.exists("generated_latex/output.png"):
+            os.remove("generated_latex/output.png")

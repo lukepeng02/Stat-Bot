@@ -5,8 +5,7 @@ from discord.ext import commands
 from globals import DELETE_EMOJI, extended_format, send_and_check
 
 random_problems = {
-
-
+            "Placeholder question: is Albert the best Stat 400 professor ever?=>yes" : {}
         }
 
 class Hypothesis_Testing(commands.Cog):
