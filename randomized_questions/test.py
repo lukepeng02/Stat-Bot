@@ -7,12 +7,14 @@ from discord.ext import commands
 from globals import extended_format, send_and_check
 
 random_problems = {
-        'A survey of &(a&) people was conducted. The difference in the number of Kleenex used daily in ' +
-        'the summer and winter was recorded for each person. The average was &(b&) Kleenex, and the ' +
-        'standard deviation was &(d&). Find the lower confidence limit of a &(100-c&)$\%$ confidence ' +
-        'interval for the true average difference in the number of Kleenex used daily in the summer and ' +
-        'winter.=>&(b+@(tinv(c/200,a-1)@)*d/sqrt(a)&)':
-        {'a': 'randint(30,40)', 'b': 'randint(-10,-5)', 'c': 'randint(2,10)', 'd': 'randint(3,5)'},
+'A survey of &(a&) fans of Enlightenment (a famous grunge band) was conducted. ' +
+        'Of these, &(d&) believed the band made better music than Pistols and Poppies, a ' +
+        'hard rock band, but had never even listened to a single Pistols and Poppies song. ' +
+        'Find the upper limit of a &(100-c&)$\%$ confidence interval for the proportion of all ' +
+        'Enlightenment fans who believed the band made better music than Pistols and Poppies, but ' +
+        'had never even listened to any of their songs.' +
+        '=>&(d/a-(@(norminv(c/200,0,1)@)*sqrt((d/a*(1-d/a)/a)))&)':
+        {'a': 'randint(150,200)', 'c': 'randint(2,10)', 'd': 'randint(60,75)'},
         }
 
 

@@ -67,7 +67,7 @@ random_problems = {'Let $X\sim B(&(a&),&(r&))$. Find $P[X=&(b&)]$' +
 
         'Suppose the scores on a 50-point alchemy exam had pdf $f(x)=\\frac{{1}}{{2250}}(2x+5)$ ' +
         'and ranged between 20 and 50. If Harry scored &(a&), what percentile is he?=>' +
-        '&((a ** 2 + 5 * a - 500) / 2250&)':
+        '&(100 * (a ** 2 + 5 * a - 500) / 2250&)':
         {'a': 'randint(25,45)'},
 
         'Suppose the scores on a 50-point alchemy exam had pdf $f(x)=\\frac{{1}}{{2250}}(2x+5)$ ' +

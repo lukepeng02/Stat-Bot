@@ -99,27 +99,27 @@ random_problems = {
         {'a': 'randint(150,200)', 'b': 'randint(100,130)', 'c': 'randint(2,10)'},
 
         'A survey of &(a&) fans of Enlightenment (a famous grunge band) was conducted. ' +
-        '&(b&) participants believed the band made better music than Pistols and Poppies, a ' +
-        'hard rock band. Of these, &(d&) had never even listened to a single Pistols and Poppies song. ' +
+        'Of these, &(d&) believed the band made better music than Pistols and Poppies, a ' +
+        'hard rock band, but had never even listened to a single Pistols and Poppies song. ' +
         'Find the upper limit of a &(100-c&)$\%$ confidence interval for the proportion of all ' +
         'Enlightenment fans who believed the band made better music than Pistols and Poppies, but ' +
         'had never even listened to any of their songs.' +
         '=>&(d/a-(@(norminv(c/200,0,1)@)*sqrt((d/a*(1-d/a)/a)))&)':
-        {'a': 'randint(150,200)', 'b': 'randint(80,100)', 'c': 'randint(2,10)', 'd': 'randint(60,75)'},
+        {'a': 'randint(150,200)', 'c': 'randint(2,10)', 'd': 'randint(60,75)'},
 
-        'A survey of &(a&) FAR residents was conducted. In response to the yes/no question, ' +
-        '``Do you like it here?", &(b&) of the participants responded with ``no". Find the upper ' +
-        'confidence limit of a &(100-c&)$\%$ confidence interval for the proportion of all FAR ' +
-        'residents who do not enjoy living there.' +
+        'A survey of &(a&) FAR residents was conducted. In response to the question, ' +
+        '``Have you ever needed to call maintenance?", &(b&) of the participants responded with ``yes". ' +
+        'Find the upper confidence limit of a &(100-c&)$\%$ confidence interval for the proportion ' +
+        'of all FAR residents who have had to call maintenance.' +
         '=>&(b/a-(@(norminv(c/200,0,1)@)*sqrt((b/a*(1-b/a)/a)))&)':
-        {'a': 'randint(150,200)', 'b': 'randint(100,130)', 'c': 'randint(2,10)'},
+        {'a': 'randint(170,200)', 'b': 'randint(140,160)', 'c': 'randint(2,10)'},
 
-        'A survey of &(a&) FAR residents was conducted. In response to the yes/no question, ' +
-        '``Do you like it here?", &(b&) of the participants responded with ``no". Find the upper ' +
-        'limit of a &(100-c&)$\%$ confidence upper bound for the proportion of all FAR ' +
-        'residents who do not enjoy living there.' +
+        'A survey of &(a&) FAR residents was conducted. In response to the question, ' +
+        '``Have you ever needed to call maintenance?", &(b&) of the participants responded with ``yes". ' +
+        'Find the upper limit of a &(100-c&)$\%$ confidence upper bound for the proportion of all FAR ' +
+        'residents who have had to call maintenance.' +
         '=>&(b/a-(@(norminv(c/100,0,1)@)*sqrt((b/a*(1-b/a)/a)))&)':
-        {'a': 'randint(150,200)', 'b': 'randint(100,130)', 'c': 'randint(2,10)'},
+        {'a': 'randint(170,200)', 'b': 'randint(140,160)', 'c': 'randint(2,10)'},
 
         'A survey of &(a&) Americans was conducted. It was discovered that &(b&) of the ' +
         'responders had received at least one dose of a COVID vaccine. Find the lower ' +
@@ -196,7 +196,7 @@ random_problems = {
         'compared to &(e&) for Bob\'s. Samples 1 and 2 had a standard deviation of &(f&) and &(g&) ' +
         'hours, respectively. Assume the population standard deviation is the same for both classes. ' +
         'Find the upper confidence limit of a &(100-c&)$\%$ confidence interval for the true ' +
-        'difference in average calories eaten per day between the two groups.' +
+        'difference in average hours spent on homework per week, between the two groups.' +
         '=>&((d-e)-@(tinv(c/200,a+b-2)@)*sqrt((1/a+1/b)*((a-1)*f**2+(b-1)*g**2)/(a+b-2))&)':
         {'a': 'randint(30,40)', 'b': 'randint(30,40)', 'c': 'randint(2,10)', 'd': 'randuni(2.0,3.0,1)',
         'e': 'randuni(3.5,4.5,1)', 'f': 'randuni(0.5,1.0,1)', 'g': 'randuni(0.6,1.2,1)'},
@@ -239,10 +239,10 @@ random_problems = {
         {'a': 'randint(30,40)', 'b': 'randint(-10,-5)', 'c': 'randint(2,10)', 'd': 'randint(3,5)'},
 
         '&(a&) people have their IQ recorded before their very first day of classes at Pirdew ' +
-        'University. After graduating, this figure is tested again. The average change in IQ was &(b&), ' +
-        'and the standard deviation of the changes was &(d&). Find the lower confidence limit of ' +
-        'a &(100-c&)$\%$ confidence interval for the mean change in IQ for all Pirdew students.' +
-        '=>&(b+@(tinv(c/200,a-1)@)*d/sqrt(a)&)':
+        'University. After graduating, this figure is tested again (with the same students). The ' +
+        'average change in IQ was &(b&), and the standard deviation of the changes was &(d&). Find ' +
+        'the lower confidence limit of a &(100-c&)$\%$ confidence interval for the mean change in IQ ' +
+        'for all Pirdew students.=>&(b+@(tinv(c/200,a-1)@)*d/sqrt(a)&)':
         {'a': 'randint(30,40)', 'b': 'randint(-30,-20)', 'c': 'randint(2,10)', 'd': 'randint(4,6)'},
 
         'To test the efficacy of a new fertilizer, Old MacDonald grows &(a&) carrots with the old ' +
