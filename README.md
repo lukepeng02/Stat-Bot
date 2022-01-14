@@ -19,3 +19,4 @@ Here are some images of its actions:
 `!bivarq`: Answer a bivariate distribution question<br/>
 `!peq`: Answer a point estimation question<br/>
 `!ciq`: Answer a confidence interval question<br/>
+`!htq`: Answer a hypothesis testing question<br/>
