@@ -9,9 +9,9 @@ Suppose $X_1,...,X_n$ are iid with mean $\frac{\lambda}{2}$ and variance $\frac{
 Jack flips a fair coin 100 times. Use the CLT to approximate the probability that he gets at most 40 heads. => 0.0228
 Jack flips a fair coin 100 times. Use the CLT to approximate the probability that he gets at least 55 heads. => 0.1587
 Jack flips a fair coin 100 times. Use the CLT to approximate the probability that he gets between 42 and 60 (inclusive) heads. => 0.9225
-Let $X$ be a random variable with mean 20 and variance 36. If I sample from X 1000 times, use the CLT to approximate the probability that the sample mean is less than 18. => 0.3085
-Let $X$ be a random variable with mean 20 and variance 36. If I sample from X 1000 times, use the CLT to approximate the probability that the sample mean is over 23. => 0.2525
-Let $X$ be a random variable with mean 20 and variance 36. If I sample from X 1000 times, use the CLT to approximate the probability that the sample mean is between 15 and 25, inclusive. => 0.5953
+Let $X$ be a random variable with mean 20 and variance 36. If I sample from X 1000 times, use the CLT to approximate the probability that the sample mean is at most 17. => 0.3085
+Let $X$ be a random variable with mean 20 and variance 36. If I sample from X 1000 times, use the CLT to approximate the probability that the sample mean is at least 24. => 0.2525
+Let $X$ be a random variable with mean 20 and variance 36. If I sample from X 1000 times, use the CLT to approximate the probability that the sample mean is between 15 and 25. => 0.5953
 Let $X$ have pdf $f(x)=\frac{48x^2+18x}{25}$ when $x\in[0,1]$ (and zero otherwise). Use the CLT to approximate $P[0.6<X<0.8]$. => 0.359
 Let $X$ have pdf $f(x)=\frac{48x^2+18x}{25}$ when $x\in[0,1]$ (and zero otherwise). Use the CLT to approximate $P[X<0.7]$. => 0.4627
 Suppose the number of dollars Mr. Krabs makes per day follows a normal distribution with mean 4200 and variance 3600. Find the probability he makes less than \$29000 next week. => 0.0059

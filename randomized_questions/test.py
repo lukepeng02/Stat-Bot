@@ -7,15 +7,12 @@ from discord.ext import commands
 from globals import extended_format, send_and_check
 
 random_problems = {
-'A survey of &(a&) fans of Enlightenment (a famous grunge band) was conducted. ' +
-        'Of these, &(d&) believed the band made better music than Pistols and Poppies, a ' +
-        'hard rock band, but had never even listened to a single Pistols and Poppies song. ' +
-        'Find the upper limit of a &(100-c&)$\%$ confidence interval for the proportion of all ' +
-        'Enlightenment fans who believed the band made better music than Pistols and Poppies, but ' +
-        'had never even listened to any of their songs.' +
-        '=>&(d/a-(@(norminv(c/200,0,1)@)*sqrt((d/a*(1-d/a)/a)))&)':
-        {'a': 'randint(150,200)', 'c': 'randint(2,10)', 'd': 'randint(60,75)'},
-        }
+        'The creator of the newest protein shake fad diet claims her users have lost 10\% of their body ' +
+        'weight, with a standard deviation of &(a&)\%. To see whether this diet actually works for ' +
+        'everybody, you survey &(b&) dieters. The sample standard deviation is &(c&)\%. Find the ' +
+        'p-value of this test.=>&(2*(1-@(chicdf((b-1)*c**2/a**2,b-1)@))&)':
+        {'a': 'randuni(1,2,2)', 'b': 'randint(10,15)', 'c': 'randuni(2.2,3.2,2)'},
+    }
 
 
 class Test(commands.Cog):

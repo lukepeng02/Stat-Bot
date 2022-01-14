@@ -49,7 +49,7 @@ random_problems = {
         '$(0,3\\theta/5), (1,2\\theta/5), (2,3(1-\\theta)/5), (3,2(1-\\theta)/5)$, where ' +
         '$\\theta\in[0,1]$. Find the MLE estimator of $\\theta$ when a sample of size 10 has the ' +
         'following observed values: &(a&) 0(s), &(b&) 1(s), &(c&) 2(s), and &(10-a-b-c&) 3(s).' +
-        '=>&((12-5*(b+2*c+3*(10-a-b-c))/10)/10&)':
+        '=>&((a+b)/10&)':
         {'a': 'randint(1,4)', 'b': 'randint(0,3)', 'c': 'randint(0,3)'},
 
         'Consider $X\sim N(&(a&),&(b&))$. Find the standard deviation of $\overline{{X}}$ when ' +

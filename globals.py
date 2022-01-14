@@ -31,8 +31,10 @@ PE_QUESTIONS_LINES = pe_questions.read().splitlines()
 pe_questions.close()
 
 def extended_format(input, vars):
+    """Takes a 'randomized_question' and variable list, and returns a concrete question and its answer."""
     expression = input
     def vars_to_nums():
+        """Assigns concrete values to random variables."""
         new_dict = {}
         for key, value in vars.items():
             to_add = value
@@ -48,6 +50,7 @@ def extended_format(input, vars):
     new_dict = vars_to_nums()
 
     def substitute_regex(expression, reg, nums):
+        """Substitute a regex with numbers in an expression"""
         subbed = expression
         while len(nums) > 0:
             subbed = sub(reg, str(nums[0]), subbed, 1)
@@ -55,6 +58,7 @@ def extended_format(input, vars):
         return subbed
 
     def sympify_stats(expression):
+        """Substitutes statistical expressions with real numbers."""
         if '@(' not in expression:
             return expression
         for index, char in enumerate(expression):
@@ -100,6 +104,45 @@ def extended_format(input, vars):
 
                 chi_sq = round(stats.chi2.ppf(area, deg_freedom, loc=0, scale=1), 8)
                 nums = [chi_sq]
+                expression = substitute_regex(expression, r'@\((.*?)@\)', nums)
+                break
+            elif expression[index:index+7] == '@(tcdf(':
+                end_index = expression[index+1:].index('@)') + index
+
+                args = expression[index+7:end_index].split(",")
+                first_expression = args[0]
+                second_expression = args[1]
+
+                crit_value = float(round_if_needed(sympify(first_expression).subs(new_dict)))
+                deg_freedom = float(round_if_needed(sympify(second_expression).subs(new_dict)))
+
+                area = round(stats.t.cdf(crit_value, deg_freedom), 8)
+                nums = [area]
+                expression = substitute_regex(expression, r'@\((.*?)@\)', nums)
+                break
+            elif expression[index:index+10] == '@(normcdf(':
+                end_index = expression[index+1:].index('@)') + index
+
+                first_expression = expression[index+10:end_index]
+
+                crit_value = float(round_if_needed(sympify(first_expression).subs(new_dict)))
+
+                area = round(stats.norm.cdf(crit_value, loc=0, scale=1), 8)
+                nums = [area]
+                expression = substitute_regex(expression, r'@\((.*?)@\)', nums)
+                break
+            elif expression[index:index+9] == '@(chicdf(':
+                end_index = expression[index+1:].index('@)') + index
+                
+                args = expression[index+9:end_index].split(",")
+                first_expression = args[0]
+                second_expression = args[1]
+
+                crit_value = float(round_if_needed(sympify(first_expression).subs(new_dict)))
+                deg_freedom = float(round_if_needed(sympify(second_expression).subs(new_dict)))
+
+                area = round(stats.chi2.cdf(crit_value, deg_freedom, loc=0, scale=1), 8)
+                nums = [area]
                 expression = substitute_regex(expression, r'@\((.*?)@\)', nums)
                 break
 

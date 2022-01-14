@@ -18,7 +18,7 @@ bot = commands.Bot(command_prefix='!')
 async def ansformat(ctx):
     await ctx.send("""```-Round numerical answers to 4 decimal places, or less if fewer are needed.
 -Include a zero before the decimal point if necessary.
--If an answer does not have any digits but 0 when rounded to 4 places, enter '0.0'.
+-If an answer does not have any digits but 0 when rounded to 4 places, enter '0'.
 -Omit all 0s after the last non-zero digit after rounding.
 e.g. If your answer is 0.47301, enter '0.473'.
 -Rounding errors may occur very occasionally within the system.```""")
